@@ -1,0 +1,19 @@
+.switch-enable, .switch-disable, .switch-enable span, .switch-disable span { background: url('../../images/switch.gif') repeat-x; display: block; float: left; }
+.switch-enable span, .switch-disable span { line-height: 30px; display: block; background-repeat: no-repeat; }
+.switch-enable span { background-position: left -90px; padding: 0 10px; }
+.switch-disable span { background-position: right -180px;padding: 0 10px; }
+.switch-disable.selected { background-position: 0 -30px; }
+.switch-disable.selected span { background-position: right -210px; color: #fff; }
+.switch-enable.selected { background-position: 0 -60px; }
+.switch-enable.selected span { background-position: left -150px; color: #fff; }
+.switch label { cursor: pointer; }
+.switch input { display: none; }
+
+.switch { margin: 0 !important; padding: 0 !important; }
+.switch label {
+  margin: 0 0 5px 0 !important;
+  padding: 0 !important;
+  clear: none !important;
+  min-width: 0 !important;
+  cursor: pointer !important;
+}

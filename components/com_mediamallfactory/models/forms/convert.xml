@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<form>
+  <field name="user_id" type="hidden"  />
+
+  <fieldset name="details">
+    <field name="current" type="mediamallfactorycurrency" default="0" />
+    <field name="amount" type="text" required="true" size="5" class="validate-numeric" />
+    <field name="credits" type="mediamallfactorycurrencytocredits" currency="amount" />
+  </fieldset>
+</form>

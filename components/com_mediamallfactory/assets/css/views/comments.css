@@ -1,0 +1,12 @@
+.rating-wrapper { display: inline-block; overflow: hidden; }
+.even { background-color: #f6f6f6; }
+.view-comments-comment { padding: 20px 15px; border-bottom: 1px solid #eeeeee; }
+
+.comment-title { font-size: large; font-weight: bold; }
+.comment-details { padding-top: 5px; color: #999999; }
+
+.comment-help { float: right; }
+
+.help-button { text-decoration: none; color: inherit !important; }
+.help-button:hover, .help-button:active, .help-button:focus { background-color: inherit !important; }
+.help-button:hover { text-decoration: underline; }

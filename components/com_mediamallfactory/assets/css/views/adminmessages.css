@@ -1,0 +1,17 @@
+.view-adminmessages .even {
+  background-color: #f6f6f6;
+}
+.view-adminmessages .message {
+  padding: 15px;
+  margin: 10px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.view-adminmessages .message-info {
+  margin-top: 10px;
+  color: #999999;
+}
+
+.view-adminmessages .admin {
+  background-color: #F2DEDE;
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<player>
+  <name>audio</name>
+  <title>Audio Player</title>
+  <description>Audio player for Media Mall Factory</description>
+
+  <files>
+    <file extension="mp3">MP3 files</file>
+  </files>
+</player>

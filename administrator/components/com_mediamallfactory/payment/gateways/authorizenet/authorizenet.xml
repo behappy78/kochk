@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<form>
+  <fieldset name="details">
+    <field name="logo" default="" />
+    <field name="purchase_logo" default="" />
+  </fieldset>
+
+  <fieldset name="params">
+    <fields name="params">
+
+	    <field name="api_login" type="text" size="60" default="" required="true"
+  			label="FACTORY_PAYMENT_AUHTORIZE_API_LOGIN_LABEL" description="FACTORY_PAYMENT_AUHTORIZE_API_LOGIN_DESC" />
+
+	    <field name="transaction_key" type="text" size="60" default="" required="true"
+  			label="FACTORY_PAYMENT_AUTHORIZE_TRANSACTION_KEY_LABEL" description="FACTORY_PAYMENT_AUTHORIZE_TRANSACTION_KEY_DESC" />
+
+  	  <field name="ssl_mode" type="switch" default="0"
+	  		label="FACTORY_PAYMENT_AUTHORIZE_SSL_MODE_LABEL" description="FACTORY_PAYMENT_AUTHORIZE_SSL_MODE_DESC" />
+
+  	  <field name="test_mode" type="switch" default="0"
+  			label="FACTORY_PAYMENT_AUTHORIZE_TEST_MODE_LABEL" description="FACTORY_PAYMENT_AUTHORIZE_TEST_MODE_DESC" />
+
+  	  <field name="action" type="text" size="60" default="https://secure.authorize.net/gateway/transact.dll" required="true"
+	  		label="FACTORY_PAYMENT_AUTHORIZE_ACTION_LABEL" description="FACTORY_PAYMENT_AUTHORIZE_ACTION_DESC" />
+
+	    <field name="action_test" type="text" size="60" default="https://test.authorize.net/gateway/transact.dll"
+  			label="FACTORY_PAYMENT_AUTHORIZE_ACTION_TEST_LABEL" description="FACTORY_PAYMENT_AUTHORIZE_ACTION_TEST_DESC" />
+
+    </fields>
+  </fieldset>
+</form>

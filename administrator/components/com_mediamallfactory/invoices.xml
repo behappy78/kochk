@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<config>
+  <!-- General -->
+  <fieldset name="invoices_general">
+    <fields name="invoices">
+
+      <!-- global-->
+      <fields name="global" side="left">
+        <field type="switch" name="enable" default="0" />
+        <field type="text" name="vat_rate" default="0" size="5" class="auto" />
+      </fields>
+    </fields>
+  </fieldset>
+
+  <!-- Invoice Template -->
+  <fieldset name="invoices_template">
+    <fields name="invoices">
+      <!-- Invoice Template -->
+      <fields name="invoice" side="full">
+        <field type="MediaMallFactoryInvoiceTemplateEditor" name="template" buttons="article,pagebreak,readmore" filter="raw" height="500">
+          <option value="%%seller_information%%">form_config_invoice_template_seller</option>
+          <option value="%%buyer_information%%">form_config_invoice_template_buyer</option>
+          <option value="%%invoice_number%%">form_config_invoice_template_number</option>
+          <option value="%%invoice_date%%">form_config_invoice_template_date</option>
+          <option value="%%item_title%%">form_config_invoice_template_item</option>
+          <option value="%%amount%%">form_config_invoice_template_amount</option>
+          <option value="%%vat%%">form_config_invoice_template_vat</option>
+          <option value="%%total%%">form_config_invoice_template_total</option>
+        </field>
+      </fields>
+    </fields>
+  </fieldset>
+
+  <!-- Buyer and Seller -->
+  <fieldset name="invoices_buyer_seller">
+    <fields name="invoices">
+      <!-- Seller Template -->
+      <fields name="seller" side="right">
+        <field type="MediaMallFactoryInvoiceTemplateEditor" name="template" buttons="article,pagebreak,readmore" filter="raw" />
+      </fields>
+
+      <!-- Buyer Template -->
+      <fields name="buyer" side="left">
+        <field type="MediaMallFactoryInvoiceTemplateEditor" name="template" buttons="article,pagebreak,readmore" filter="raw">
+          <option value="%%name%%">form_config_buyer_template_name</option>
+          <option value="%%address%%">form_config_buyer_template_address</option>
+          <option value="%%city%%">form_config_buyer_template_city</option>
+          <option value="%%country%%">form_config_buyer_template_country</option>
+        </field>
+      </fields>
+
+    </fields>
+  </fieldset>
+</config>

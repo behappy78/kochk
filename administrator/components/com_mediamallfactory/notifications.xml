@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<notifications>
+  <notification type="user_invoice_issued">
+    <option>receiver_username</option>
+    <option>date</option>
+  </notification>
+
+  <notification type="author_received_review">
+    <option>receiver_username</option>
+    <option>date</option>
+    <option>media_title</option>
+  </notification>
+
+  <notification type="author_media_sale">
+    <option>receiver_username</option>
+    <option>date</option>
+    <option>media_title</option>
+  </notification>
+</notifications>

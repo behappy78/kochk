@@ -1,0 +1,17 @@
+DROP TABLE IF EXISTS `#__mediamallfactory_admin_messages`;
+DROP TABLE IF EXISTS `#__mediamallfactory_comments`;
+DROP TABLE IF EXISTS `#__mediamallfactory_comments_votes`;
+DROP TABLE IF EXISTS `#__mediamallfactory_credits_bonuses`;
+DROP TABLE IF EXISTS `#__mediamallfactory_invoices`;
+DROP TABLE IF EXISTS `#__mediamallfactory_log_balance`;
+DROP TABLE IF EXISTS `#__mediamallfactory_log_credits`;
+DROP TABLE IF EXISTS `#__mediamallfactory_media`;
+DROP TABLE IF EXISTS `#__mediamallfactory_media_log`;
+DROP TABLE IF EXISTS `#__mediamallfactory_notifications`;
+DROP TABLE IF EXISTS `#__mediamallfactory_orders`;
+DROP TABLE IF EXISTS `#__mediamallfactory_payment_gateways`;
+DROP TABLE IF EXISTS `#__mediamallfactory_payment_requests`;
+DROP TABLE IF EXISTS `#__mediamallfactory_payments`;
+DROP TABLE IF EXISTS `#__mediamallfactory_profiles`;
+DROP TABLE IF EXISTS `#__mediamallfactory_purchases`;
+DROP TABLE IF EXISTS `#__mediamallfactory_types`;

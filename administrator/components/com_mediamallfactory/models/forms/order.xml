@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<form>
+  <fieldset name="details">
+    <field name="id" type="text" readonly="true" class="readonly" />
+    <field name="user_id" type="user" readonly="true" class="readonly" disabled="true" />
+    <field name="created_at" type="text" readonly="true" class="readonly" disabled="true" />
+    <field name="amount" type="text" readonly="true" class="readonly" disabled="true" />
+    <field name="currency" type="text" readonly="true" class="readonly" disabled="true" />
+    <field name="gateway" type="text" readonly="true" class="readonly" disabled="true" />
+    <field name="params" type="MediaMallFactoryOrderCredits" readonly="true" class="readonly" disabled="true" />
+    <field name="paid" type="list" default="0">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="status" type="MediaMallFactoryPaymentStatus" />
+  </fieldset>
+</form>

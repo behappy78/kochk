@@ -1,0 +1,8 @@
+.icon-32-unpaid {
+  background-position: 0 32px;
+  background-image: url('../../../../../templates/bluestork/images/toolbar/icon-32-unpublish.png');
+}
+
+.icon-16-disabled{
+  background-image: url('../../../../../templates/bluestork/images/admin/disabled.png');
+}

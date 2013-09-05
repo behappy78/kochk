@@ -1,0 +1,14 @@
+.category { margin-bottom: 20px; overflow: hidden; }
+.photo { height: 64px; width: 64px; float: left; margin-right: 20px; }
+.details { display: table-cell; }
+.no-photo {
+  background-image: url('../../images/no_photo.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.media_count, .media_count a {
+  color: #aaaaaa !important;
+}
+.media_count a { text-decoration: none; }
+.media_count a:hover { text-decoration: underline; background-color: transparent !important; }

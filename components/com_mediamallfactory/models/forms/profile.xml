@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<form>
+  <fieldset name="user">
+    <field name="review_id" type="MediaMallFactoryList" default="0">
+      <option value="0">COM_MEDIAMALLFACTORY_FORM_PROFILE_REVIEW_ID_OPTION_USERNAME</option>
+      <option value="1">COM_MEDIAMALLFACTORY_FORM_PROFILE_REVIEW_ID_OPTION_NAME</option>
+    </field>
+
+    <field name="list_limit" type="list" default="10">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="20">20</option>
+    </field>
+
+    <field name="media_list_limit" type="list" default="10">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="20">20</option>
+    </field>
+
+    <fields name="params">
+      <field name="first_name" type="text" />
+      <field name="last_name" type="text" />
+      <field name="address" type="text" />
+      <field name="city" type="text" />
+      <field name="country" type="text" />
+
+      <fields name="notifications">
+        <field name="user_invoice_issued" type="switch" default="0" />
+      </fields>
+
+    </fields>
+  </fieldset>
+
+  <fieldset name="author">
+    <fields name="params">
+      <fields name="author">
+        <field name="paypal_email" type="text" class="validate-email" />
+      </fields>
+      <field name="allow_contact" type="switch" default="0" />
+      <fields name="notifications">
+        <field name="author_received_review" type="switch" default="0" />
+        <field name="author_media_sale" type="switch" default="0" />
+      </fields>
+    </fields>
+  </fieldset>
+</form>

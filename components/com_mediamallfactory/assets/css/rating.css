@@ -1,0 +1,10 @@
+.rating-star {
+  height: 16px;
+  width: 16px;
+  float: left;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.star-full { background-image: url('../images/star.png'); }
+.star-half { background-image: url('../images/star-half.png'); }
+.star-empty { background-image: url('../images/star-empty.png'); }

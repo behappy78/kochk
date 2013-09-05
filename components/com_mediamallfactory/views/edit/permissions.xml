@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<permissions>
+	<permission type="logged" />
+	<permission type="author" />
+	<permission type="limitedUploads" />
+	<permission type="editMedia" />
+</permissions>
