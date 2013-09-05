@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<form>
+  <fieldset name="hidden">
+    <field type="hidden" name="navigate" />
+    <field type="hidden" name="VPSProtocol" default="2.23" />
+    <field type="hidden" name="TxType" default="PAYMENT" />
+    <field type="hidden" name="Vendor" />
+    <field type="hidden" name="Crypt"  />
+  </fieldset>
+</form>

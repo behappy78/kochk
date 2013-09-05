@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<extension type="component" version="2.5" method="upgrade">
+	<name>com_mediamallfactory</name>
+  <version>3.3.5</version>
+
+  <creationDate>August 2008</creationDate>
+  <author>The Factory</author>
+  <copyright>SKEPSIS Consult SRL</copyright>
+  <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+  <authorEmail>contact@thefactory.ro</authorEmail>
+  <authorUrl>www.thefactory.ro</authorUrl>
+  <description>Media Mall Factory</description>
+
+  <languages folder="languages/frontend">
+		<language tag="en-GB">en-GB.com_mediamallfactory.ini</language>
+		<language tag="en-GB">en-GB.com_mediamallfactory.authorizenet.ini</language>
+		<language tag="en-GB">en-GB.com_mediamallfactory.paypal.ini</language>
+		<language tag="en-GB">en-GB.com_mediamallfactory.moneybookers.ini</language>
+		<language tag="en-GB">en-GB.com_mediamallfactory.sagepay.ini</language>
+	</languages>
+
+  <scriptfile>script.php</scriptfile>
+
+  <install>
+    <sql><file charset="utf8" driver="mysql">sqls/install.mysql.utf8.sql</file></sql>
+  </install>
+
+  <uninstall>
+    <sql><file charset="utf8" driver="mysql">sqls/uninstall.mysql.utf8.sql</file></sql>
+  </uninstall>
+
+  <files folder="frontend">
+    <folder>assets</folder>
+    <folder>controllers</folder>
+    <folder>events</folder>
+    <folder>html</folder>
+    <folder>models</folder>
+    <folder>players</folder>
+    <folder>storage</folder>
+    <folder>storage_secure</folder>
+    <folder>views</folder>
+    <filename>controller.php</filename>
+    <filename>events.xml</filename>
+    <filename>mediamallfactory.php</filename>
+    <filename>payment.php</filename>
+    <filename>router.php</filename>
+    <filename>index.html</filename>
+  </files>
+
+	<administration>
+    <menu>COM_MEDIAMALLFACTORY_COMPONENT_TITLE</menu>
+    <submenu>
+      <menu view="list">COM_BRIEFCASEFACTORY_COMPONENT_MENU_LIST</menu>
+      <menu view="users">COM_BRIEFCASEFACTORY_COMPONENT_MENU_USERS</menu>
+      <menu view="orders">COM_BRIEFCASEFACTORY_COMPONENT_MENU_ORDERS</menu>
+      <menu view="payments">COM_BRIEFCASEFACTORY_COMPONENT_MENU_PAYMENTS</menu>
+      <menu view="invoices">COM_BRIEFCASEFACTORY_COMPONENT_MENU_INVOICES</menu>
+      <menu view="requests">COM_BRIEFCASEFACTORY_COMPONENT_MENU_REQUESTS</menu>
+      <menu view="configuration">COM_BRIEFCASEFACTORY_COMPONENT_MENU_SETTINGS</menu>
+      <menu view="about">COM_BRIEFCASEFACTORY_COMPONENT_MENU_ABOUT</menu>
+    </submenu>
+
+    <languages folder="languages/backend">
+  		<language tag="en-GB">en-GB.com_mediamallfactory.ini</language>
+  		<language tag="en-GB">en-GB.com_mediamallfactory.sys.ini</language>
+  	</languages>
+
+    <files folder="backend">
+      <folder>assets</folder>
+      <folder>controllers</folder>
+      <folder>helpers</folder>
+      <folder>html</folder>
+      <folder>libraries</folder>
+      <folder>models</folder>
+      <folder>payment</folder>
+      <folder>sqls</folder>
+      <folder>tables</folder>
+      <folder>views</folder>
+      <filename>access.xml</filename>
+      <filename>config.xml</filename>
+      <filename>controller.php</filename>
+      <filename>invoices.xml</filename>
+      <filename>mediamallfactory.php</filename>
+      <filename>notifications.xml</filename>
+      <filename>index.html</filename>
+    </files>
+  </administration>
+</extension>

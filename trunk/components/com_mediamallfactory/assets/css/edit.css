@@ -1,0 +1,49 @@
+.factory-view-edit fieldset {
+  border: 1px solid #cccccc;
+  margin: 10px 0 15px;
+  padding: 20px 15px;
+}
+.factory-view-edit legend {
+  font-weight: bold;
+  padding: 3px 5px;
+  font-size: larger;
+  color: #666666;
+}
+
+.factory-view-edit fieldset.radio {
+  border: 0; margin: 0; padding: 0;
+}
+
+.factory-view-edit input[type="text"],
+.factory-view-edit input[type="email"],
+.factory-view-edit select,
+.factory-view-edit textarea {
+  border: 1px solid #cccccc; padding: 3px;
+}
+
+.factory-view-edit input[type="text"],
+.factory-view-edit input[type="email"],
+.factory-view-edit textarea {
+  width: 80%;
+}
+
+.factory-view-edit table { width: 100%; margin-bottom: 10px; }
+.factory-view-edit td, .factory-view-edit th { padding: 5px; border: 0; }
+.factory-view-edit th { font-weight: normal; text-align: left; vertical-align: top; width: 150px; padding-top: 10px; }
+.factory-view-edit td, .factory-view-edit tr { border: 0; }
+
+.factory-view-edit select {
+  width: 200px;
+}
+.factory-view-edit .buttons {
+  background-color: #f6f6f6;
+  padding: 5px 10px;
+  text-align: right;
+  border-bottom: 1px solid #dddddd;
+  border-radius: 0;
+}
+.factory-view-edit input.auto,
+.factory-view-edit select.auto { width: auto; }
+.factory-view-edit .readonly {
+  border: 0 !important;
+}

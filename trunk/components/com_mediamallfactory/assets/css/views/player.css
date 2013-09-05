@@ -1,0 +1,23 @@
+.view-player .buttons {
+  margin: 10px 0;
+}
+.view-player .top {
+  padding: 0;
+  text-align: center;
+  background-color: #000000;
+  border: 1px solid #000000;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.view-player .top img { max-width: 100%; }
+
+.view-player .bottom {
+  background-color: #666666;
+  border-top: 1px solid #999999;
+  padding: 10px;
+  overflow: hidden;
+}
+.view-player .description {
+  color: #F6F6F6;
+  margin-bottom: 10px;
+}

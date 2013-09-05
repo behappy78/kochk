@@ -1,0 +1,4 @@
+input, select { font-size: 1em !important; }
+.factory-view-edit td,
+.factory-view-edit th { padding: 0; }
+table.group-rules td select { width: auto; }

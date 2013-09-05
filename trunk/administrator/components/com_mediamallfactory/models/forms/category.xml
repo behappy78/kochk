@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fields name="params" addfieldpath="/administrator/components/com_mediamallfactory/models/fields">
+    <fieldset name="mediamall" label="Media Mall Thumbnail">
+      <fields name="thumbnail">
+        <field name="current" type="MediaMallFactoryCategoryThumbnail" label="Current" />
+        <field name="new" type="media" label="New" />
+      </fields>
+    </fieldset>
+  </fields>
+</form>

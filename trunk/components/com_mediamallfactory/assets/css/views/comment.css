@@ -1,0 +1,9 @@
+.view-comment input[type="text"], .view-comment textarea {
+  border: 1px solid #cccccc; padding: 3px; width: 80%;
+}
+
+.view-comment table { width: 100%; margin-bottom: 10px; }
+.view-comment td, .view-comment th { padding: 5px; }
+.view-comment th { font-weight: normal; text-align: right; vertical-align: top; width: 100px; }
+
+.view-comment .rating-star { cursor: pointer; }

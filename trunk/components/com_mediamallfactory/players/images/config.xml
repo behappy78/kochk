@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<player>
+  <name>images</name>
+  <title>Images Player</title>
+  <description>Images player for Media Mall Factory</description>
+
+  <files>
+    <file extension="png">PNG files</file>
+    <file extension="jpg">JPEG files</file>
+    <file extension="gif">GIF files</file>
+  </files>
+</player>

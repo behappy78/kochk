@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<form>
+  <field name="user_id" type="hidden" />
+
+  <fieldset name="details">
+    <field name="credits" type="text" required="true" size="10" class="auto validate-numeric" />
+    <field name="bonus" type="mediamallfactorybonuscredits" />
+    <field name="amount" type="mediamallfactorycreditstocurrency" credits="credits" />
+    <field name="method" type="mediamallfactorypaymentgateway" required="true" />
+  </fieldset>
+</form>

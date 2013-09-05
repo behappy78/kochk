@@ -1,0 +1,6 @@
+.author-details { margin: 20px; }
+.author-details table { border-collapse: collapse; }
+.author-details th,
+.author-details td { padding: 10px; }
+.author-details tr:nth-child(2n) th,
+.author-details tr:nth-child(2n) td { background-color: #eeeeee; }

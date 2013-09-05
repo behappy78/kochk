@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<config>
+  <!-- General -->
+  <fieldset name="general">
+    <fields name="general">
+
+      <!-- Currency -->
+      <fields name="global" side="left">
+        <field type="switch" name="free_media_guests" default="0" />
+        <field type="switch" name="approve_media" default="1" />
+        <field type="switch" name="unlimited_views" default="0" />
+        <field type="switch" name="category_sale" default="0" />
+        <field type="text" name="view_timelimit" default="30" size="5" class="auto" />
+      </fields>
+
+      <!-- Credits -->
+      <fields name="credits" side="left">
+        <field type="text" name="cost_contact" default="1" size="5" class="auto" />
+        <field type="text" name="initial" default="5" size="5" class="auto" />
+        <field type="text" name="credits_rate" default="0.5" size="5" class="auto" />
+      </fields>
+
+      <!-- Currency -->
+      <fields name="currency" side="left">
+        <field type="text" name="label" default="EUR" size="5" class="auto" />
+        <field type="text" name="symbol" default="&#8364;" size="5" class="auto" />
+      </fields>
+
+      <!-- Thumbnails -->
+      <fields name="thumbnails" side="right">
+        <field type="switch" name="generate_from_media" default="1" />
+        <field type="text" name="quality" default="80" size="5" class="auto" />
+        <field type="text" name="small_media_width" default="64" size="5" class="auto" />
+        <field type="text" name="large_media_width" default="128" size="5" class="auto" />
+        <field type="text" name="category_width" default="64" size="5" class="auto" />
+      </fields>
+
+      <!-- Dashboard -->
+      <fields name="dashboard" side="right">
+        <field type="text" name="limit" default="5" size="5" class="auto" />
+      </fields>
+
+    </fields>
+  </fieldset>
+
+  <!-- Authors -->
+  <fieldset name="authors">
+    <fields name="authors">
+
+      <!--- general-->
+      <fields name="global" side="left">
+        <field type="text" name="min_amount_withdraw" default="10" size="5" class="auto" />
+        <field type="text" name="author_percent" default="80" size="5" class="auto" />
+        <field type="MediaMallFactoryUserGroup" name="author" multiple="true" size="10" />
+      </fields>
+
+      <fields name="restrictions" side="right">
+        <field type="MediaMallFactoryUserGroup" name="auto_approve" multiple="true" size="10" />
+        <field type="MediaMallFactoryUserGroup" name="own_price" multiple="true" size="10" />
+        <field type="MediaMallFactoryUserGroup" name="only_free" multiple="true" size="10" />
+        <field type="MediaMallFactoryUserGroup" name="edit_own_media" multiple="true" size="10" />
+        <field type="MediaMallFactoryUserGroup" name="limited_uploads" multiple="true" size="10" />
+        <field type="text" name="limited_uploads_value" class="auto" size="5" default="0" />
+      </fields>
+
+    </fields>
+  </fieldset>
+
+  <!-- System Info -->
+  <fieldset name="sys_info">
+    <fields name="sys_info">
+      <!-- Joomla Settings -->
+      <fields name="joomla" side="left">
+        <field name="error_reporting" type="MediaMallFactorySysInfo" />
+        <field name="site_locale_time" type="MediaMallFactorySysInfo" />
+      </fields>
+
+      <!-- PHP Settings -->
+      <fields name="php" side="left">
+        <field name="display_errors" type="MediaMallFactorySysInfo" />
+        <field name="file_uploads" type="MediaMallFactorySysInfo" />
+        <field name="max_upload_size" type="MediaMallFactorySysInfo" />
+        <field name="gmt_time" type="MediaMallFactorySysInfo" />
+      </fields>
+    </fields>
+  </fieldset>
+</config>

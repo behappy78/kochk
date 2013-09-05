@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<form>
+  <fieldset name="details">
+    <field name="title" type="text" />
+    <field name="published" type="switch" default="0" />
+    <field name="logo" type="text" />
+    <field name="purchase_logo" type="text" />
+  </fieldset>
+</form>

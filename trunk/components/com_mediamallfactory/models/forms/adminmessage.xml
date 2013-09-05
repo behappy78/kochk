@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<form>
+  <field name="user_id" type="hidden" />
+  <field name="item_id" type="hidden" />
+  <field name="owner_id" type="hidden" />
+  <field name="type" type="hidden" />
+
+  <fieldset name="details">
+    <field name="message" type="textarea" required="true" rows="10"
+           label="COM_MEDIAMALLFACTORY_FORM_ADMINMESSAGES_MESSAGE_LABEL" description="COM_MEDIAMALLFACTORY_FORM_ADMINMESSAGES_MESSAGE_DESC" />
+  </fieldset>
+</form>

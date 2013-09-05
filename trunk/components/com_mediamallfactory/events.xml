@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<events>
+  <event type="creditsUpdate" handler="log" />
+  <event type="balanceUpdate" handler="log" />
+
+  <event type="mediaPublish" handler="messages" />
+  <event type="mediaDownload" handler="log" />
+  <event type="mediaPurchase" handler="mailer" />
+  <event type="mediaDelete">
+    <handler>messages</handler>
+    <handler>comments</handler>
+  </event>
+
+  <event type="commentDelete" handler="comments" />
+  <event type="commentStore">
+    <handler>messages</handler>
+    <handler>mailer</handler>
+  </event>
+
+  <event type="paymentStatusChange" handler="order" />
+
+  <event type="orderPaidChange" handler="order" />
+  <event type="orderStatusChange">
+    <handler>profile</handler>
+    <handler>invoice</handler>
+    <handler>mailer</handler>
+  </event>
+
+  <event type="paymentRequestResolved" handler="profile" />
+
+  <event type="invoiceIssued" handler="mailer" />
+</events>

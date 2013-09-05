@@ -1,0 +1,27 @@
+.factory-view-form fieldset {
+  border: 1px solid #cccccc;
+  margin: 10px 0 15px;
+  padding: 20px 15px;
+}
+.factory-view-form legend {
+  font-weight: bold;
+  padding: 3px 5px;
+  font-size: larger;
+  color: #666666;
+}
+
+.factory-view-form table { width: 100%; margin-bottom: 10px; }
+.factory-view-form td, th { padding: 10px; border: 0; }
+.factory-view-form th { font-weight: normal; text-align: left; vertical-align: top; width: 150px; }
+.factory-view-form td, .factory-view-form tr { border: 0; }
+.factory-view-form tr.even td,
+.factory-view-form tr.even th { background-color: #f6f6f6; }
+
+.factory-view-form .buttons {
+  margin: 20px -15px -20px -15px;
+  padding-left: 10px;
+  border-top: 1px solid #dddddd;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #f6f6f6;
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<player>
+  <name>videos</name>
+  <title>Videos Player</title>
+  <description>Videos player for Media Mall Factory</description>
+
+  <files>
+    <file extension="flv">FLV files</file>
+    <file extension="swf">SWF files</file>
+    <file extension="mov">MOV files</file>
+    <file extension="wmv">WMV files</file>
+    <file extension="avi">AVI files</file>
+  </files>
+</player>

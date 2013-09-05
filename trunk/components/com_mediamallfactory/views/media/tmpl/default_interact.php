@@ -1,0 +1,29 @@
+<?php
+
+/**------------------------------------------------------------------------
+com_mediamallfactory - Media Mall Factory 3.3.5
+------------------------------------------------------------------------
+ * @author TheFactory
+ * @copyright Copyright (C) 2011 SKEPSIS Consult SRL. All Rights Reserved.
+ * @license - http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ * Websites: http://www.thefactory.ro
+ * Technical Support: Forum - http://www.thefactory.ro/joomla-forum/
+-------------------------------------------------------------------------*/
+
+defined('_JEXEC') or die; ?>
+
+<fieldset>
+  <legend><?php echo FactoryText::_('media_fieldset_interact_legend_label'); ?></legend>
+
+  <?php if ($this->item->has_media): ?>
+    <?php echo $this->loadTemplate('interact_media'); ?>
+  <?php endif; ?>
+
+  <?php if ($this->item->has_archive): ?>
+    <?php echo $this->loadTemplate('interact_archive'); ?>
+  <?php endif; ?>
+
+  <?php if ($this->item->isAllowedContact()): ?>
+    <?php echo $this->loadTemplate('interact_contact'); ?>
+  <?php endif; ?>
+</fieldset>

@@ -1,0 +1,12 @@
+.view-purchasecredits .payment-container {
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.view-purchasecredits .payment-container img {
+  vertical-align: middle; margin-left: 5px
+}
+
+tr.even td,
+tr.even th { background-color: #f6f6f6; }

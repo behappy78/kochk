@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<form>
+  <fieldset name="details">
+    <field name="logo" default="" />
+    <field name="purchase_logo" default="" />
+  </fieldset>
+
+  <fieldset name="params">
+    <fields name="params">
+      <field name="email" type="text" size="60" default="" required="true"
+  			label="FACTORY_PAYMENT_PAYPAL_EMAIL_LABEL" description="FACTORY_PAYMENT_PAYPAL_EMAIL_DESC" />
+
+      <field name="action" type="text" default="https://www.paypal.com/cgi-bin/webscr" required="true"
+  			label="FACTORY_PAYMENT_PAYPAL_ACTION_LABEL" description="FACTORY_PAYMENT_PAYPAL_ACTION_DESC" />
+
+      <field name="action_sandbox" type="text" default="https://www.sandbox.paypal.com/cgi-bin/webscr"
+			  label="FACTORY_PAYMENT_PAYPAL_ACTION_SANDBOX_LABEL" description="FACTORY_PAYMENT_PAYPAL_ACTION_SANDBOX_DESC" />
+
+      <field name="sandbox" type="switch" default="0"
+        label="FACTORY_PAYMENT_PAYPAL_ENABLE_SANDBOX_LABEL" description="FACTORY_PAYMENT_PAYPAL_ENABLE_SANDBOX_DESC"/>
+    </fields>
+  </fieldset>
+</form>
