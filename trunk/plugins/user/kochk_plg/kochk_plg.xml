@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<extension type="plugin" version="2.5.14" method="upgrade" group="user">
+	<name>Kochk User</name>
+	<author>Feki Hichem</author>
+	<version>1.0.0</version>
+	<description>Kochk Component user plugin</description>
+	<files>
+		<filename>kochk_plg.xml</filename>
+		<filename plugin="kochk_plg">kochk_plg.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="bassic" label="Kochk plg Settings">
+				<field name="menu_id" type="menuitem" label="Select Redirect Page"/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
