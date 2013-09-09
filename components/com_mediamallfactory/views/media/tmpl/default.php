@@ -10,7 +10,10 @@ com_mediamallfactory - Media Mall Factory 3.3.5
  * Technical Support: Forum - http://www.thefactory.ro/joomla-forum/
 -------------------------------------------------------------------------*/
 
-defined('_JEXEC') or die; ?>
+defined('_JEXEC') or die;
+
+
+?>
 
 <div class="factory-view view-media">
   <h1><?php echo $this->item->title; ?></h1>

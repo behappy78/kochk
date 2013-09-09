@@ -32,7 +32,10 @@ class MediaMallFactoryFrontendControllerProfile extends JController
     $context = $option.'.edit.profile.data';
 
     $app->setUserState($context, null);
-
+    if ('save' == $this->getTask()) {
+        $data["profiled"] = 1;}
+    //print_r($data);
+    //die();
     if ($model->save($data)) {
       $msg = FactoryText::_('profile_save_success');
     } else {

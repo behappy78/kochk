@@ -26,13 +26,22 @@
       <field name="last_name" type="text" />
       <field name="address" type="text" />
       <field name="city" type="text" />
-      <field name="country" type="text" />
+      <field name="country"
+            type="sql"
+            id="country"
+            description="COM_MEDIAMALLFACTORY_FORM_PROFILE_COUNTRY_DESC"
+            filter="string"
+            label="COM_MEDIAMALLFACTORY_FORM_PROFILE_COUNTRY"
+            message="COM_MEDIAMALLFACTORY_FORM_PROFILE_COUNTRY_MESSAGE"
+            query="SELECT iso3 as value, fr as country FROM #__countries ORDER by country"
+	  />
 
       <fields name="notifications">
         <field name="user_invoice_issued" type="switch" default="0" />
       </fields>
 
     </fields>
+    <field name="profiled" type="hidden" value ="0"/>
   </fieldset>
 
   <fieldset name="author">

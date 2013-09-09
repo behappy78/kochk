@@ -79,6 +79,24 @@ class MediaMallFactoryFrontendModelEditProfile extends JModel
     if (!$data) {
       $data = $this->getItem();
       $data->params = $data->params->toArray();
+	   /*
+       * Get the country name from the code
+       */
+      $country = $data->params['country'];
+      $db =& JFactory::getDBO();
+      $query = $db->getQuery(true);
+      $query->select('fr');
+      $query->from('#__countries'); 
+      $query->where('iso3 ="'.$country.'"');
+      $db->setQuery($query);
+      if ($db->getErrorNum()) {
+        echo $db->getErrorMsg();
+      }
+      $results = $db->loadObjectList();
+      //echo $country;
+      if ($results) {
+          $data->params['country'] = $results[0]->fr;
+      }      
     }
 
     return $data;
@@ -98,7 +116,6 @@ class MediaMallFactoryFrontendModelEditProfile extends JModel
       if (!$table->user_id) {
         $table = $table->createProfile($user_id);
       }
-
       $items[$user_id] = $table;
     }
 
