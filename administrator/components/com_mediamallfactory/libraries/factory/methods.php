@@ -491,4 +491,15 @@ class FactoryForm extends JForm
 
 		return true;
   }
+  public function getFieldsset($fieldset)
+  {
+    // Make sure there is a valid JForm XML document.
+		if (!($this->xml instanceof SimpleXMLElement)) {
+			return false;
+		}
+
+		// Get the fields elements for a given group.
+		$elements = $this->xml->xpath('//fieldset[@name="'.$fieldset.'"]');
+    	return $elements;
+  }  
 }

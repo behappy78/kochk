@@ -11,6 +11,7 @@ com_mediamallfactory - Media Mall Factory 3.3.5
 -------------------------------------------------------------------------*/
 
 defined('_JEXEC') or die; 
+/*
 $user =& JFactory::getUser();
 if ($user->guest) {
     $session =& JFactory::getSession();
@@ -45,7 +46,7 @@ else {
         $url=JRoute::_(JURI::base()."index.php?option=com_mediamallfactory&view=editprofile");
         $app->redirect($url, "Please Complete your profile to continue");
     }
-}
+}*/
 ?>
 
 <div class="factory-view view-list factory-view-list">

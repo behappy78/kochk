@@ -17,7 +17,6 @@ class MediaMallFactoryFrontendControllerProfile extends JController
   public function __construct($config = array())
   {
     parent::__construct($config);
-
     $this->registerTask('apply', 'save');
   }
 
