@@ -187,8 +187,19 @@ class FactoryApplication
       case 'logged':
         if ($user->guest) {
           $this->app->enqueueMessage(FactoryText::_('permissions_you_must_login_first'), 'error');
+          $session =& JFactory::getSession();
+          $uri = &JURI::getInstance();
+          $myabsoluteurl = $uri->toString(array('path'));
+          $option =JRequest::getVar('option');
+          $view =JRequest::getVar('view');
+          $session->set('origpage',$myabsoluteurl);
+          $session->set('option',$option);
+          $session->set('view',$view);
+          $session->set('gets',$_GET);
           $this->app->redirect(JRoute::_('index.php?option=com_users&view=login', false));
           return false;
+        }else{
+          
         }
         break;
 

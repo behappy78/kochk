@@ -17,4 +17,14 @@ jimport('joomla.application.component.controller');
 class MediaMallFactoryFrontendController extends JController
 {
   protected $default_view = 'list';
+  function __construct($config)
+  {
+        $jinput = JFactory::getApplication()->input;
+        $session =& JFactory::getSession();
+        $format = $jinput->get->get('format', 'html');
+        if ($format == 'html' && $session->has('step'))
+            $session->clear('step');
+        parent::__construct($config);   
+  }
+  
 }

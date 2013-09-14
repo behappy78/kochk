@@ -58,7 +58,6 @@ class FactoryView extends JView
     if (is_null($tpl)) {
       $tpl = $this->tpl;
     }
-
     parent::display($tpl);
   }
 
