@@ -28,7 +28,7 @@ $document->addScriptDeclaration("
 				//alert('before send');
 				theform.set('send', {
 					onComplete: function(response) {
-						$('kochkmain').set('html', response);
+						document.id('kochkmain').set('html', response);
 					}
 				});
 				// Send the form.
