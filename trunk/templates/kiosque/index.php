@@ -142,201 +142,13 @@ $app = JFactory::getApplication();
   <!-- Start Main Content Holder -->
   <section id="content-holder" class="container-fluid container">
     <section class="row-fluid">
-    	<div class="heading-bar">
-        	<h2>Grid View Without Side Bar</h2>
-            <span class="h-line"></span>
-        </div>
-        <!-- Start Main Content -->
-        <section class="span12 first">
-        	<!-- Start Ad Slider Section -->
-			<div class="blog-sec-slider">
-                <div class="slider7">
-                  <div class="slide"><a href="#"><img src="templates/kiosque/images/image22.jpg" alt=""/></a></div>
-                  <div class="slide"><a href="#"><img src="templates/kiosque/images/image36.jpg" alt=""/></a></div>
-                  <div class="slide"><a href="#"><img src="templates/kiosque/images/image22.jpg" alt=""/></a></div>
-                </div>
-            </div>
-            <!-- End Ad Slider Section -->
+    
+    	<!-- Start Component View Section -->
             <jdoc:include type="message" />
-			<jdoc:include type="component" />
-            <!-- Start Grid View Section -->
-            <div class="product_sort">
-                <div class="row-1">
-                	<div class="left">
-                    	<span class="s-title">Sort by</span>
-                        <span class="list-nav">
-                        	<select name="">
-                            	<option>Position</option>
-                                <option>Position 2</option>
-                                <option>Position 3</option>
-                                <option>Position 4</option>
-                            </select>
-                        </span>
-                    </div>
-                    <div class="right">
-                    	<span>Show</span>
-                        <span>
-                        	<select name="">
-                            	<option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                            </select>
-                        </span>
-                        <span>per page</span>
-                    </div>
-                </div>
-            	<div class="row-2">
-                	<span class="left">Items 1 to 9 of 15 total</span>
-                	<ul class="product_view">
-                		<li>View as:</li>
-                    	<li>
-                        	<a class="grid-view" href="grid-view.html">Grid View</a>
-                        </li>
-                		<li>
-                        	<a class="list-view" href="list-view.html">List View</a>
-                        </li>
-                	</ul>
-                </div>
-            </div>
-            <section class="grid-holder features-books">
-            	<figure class="span3 slide">
-                	<a href="book-detail.html"><img src="templates/kiosque/images/image25.jpg" alt="" class="pro-img"/></a>
-                    <span class="title"><a href="book-detail.html">A Walk Across The Sun</a></span>
-                    <span class="rating-bar"><img src="templates/kiosque/images/rating-star.png" alt="Rating Star"/></span>
-                    <div class="cart-price">
-                        <a class="cart-btn2" href="cart.html">Add to Cart</a>
-                        <span class="price">$129.90</span>
-              		</div>
-                </figure>
-                <figure class="span3 slide">
-                	<a href="book-detail.html"><img src="templates/kiosque/images/image38.jpg" alt="" class="pro-img"/></a>
-                    <span class="title"><a href="book-detail.html">A Walk Across The Sun</a></span>
-                    <span class="rating-bar"><img src="templates/kiosque/images/rating-star.png" alt="Rating Star"/></span>
-                    <div class="cart-price">
-                        <a class="cart-btn2" href="cart.html">Add to Cart</a>
-                        <span class="price">$129.90</span>
-              		</div>
-                </figure>
-                <figure class="span3 slide">
-                	<a href="book-detail.html"><img src="templates/kiosque/images/image39.jpg" alt="" class="pro-img"/></a>
-                    <span class="title"><a href="book-detail.html">A Walk Across The Sun</a></span>
-                    <span class="rating-bar"><img src="templates/kiosque/images/rating-star.png" alt="Rating Star"/></span>
-                    <div class="cart-price">
-                        <a class="cart-btn2" href="cart.html">Add to Cart</a>
-                        <span class="price">$129.90</span>
-              		</div>
-                </figure>
-                <figure class="span3 slide">
-                	<a href="book-detail.html"><img src="templates/kiosque/images/image40.jpg" alt="" class="pro-img"/></a>
-                    <span class="title"><a href="book-detail.html">A Walk Across The Sun</a></span>
-                    <span class="rating-bar"><img src="templates/kiosque/images/rating-star.png" alt="Rating Star"/></span>
-                    <div class="cart-price">
-                        <a class="cart-btn2" href="cart.html">Add to Cart</a>
-                        <span class="price">$129.90</span>
-              		</div>
-                </figure>
-                
-                <hr/>
-                <figure class="span3 slide first">
-                	<a href="book-detail.html"><img src="templates/kiosque/images/image41.jpg" alt="" class="pro-img"/></a>
-                    <span class="title"><a href="book-detail.html">A Walk Across The Sun</a></span>
-                    <span class="rating-bar"><img src="templates/kiosque/images/rating-star.png" alt="Rating Star"/></span>
-                    <div class="cart-price">
-                        <a class="cart-btn2" href="cart.html">Add to Cart</a>
-                        <span class="price">$129.90</span>
-              		</div>
-                </figure>
-                <figure class="span3 slide">
-                	<a href="book-detail.html"><img src="templates/kiosque/images/image25.jpg" alt="" class="pro-img"/></a>
-                    <span class="title"><a href="book-detail.html">A Walk Across The Sun</a></span>
-                    <span class="rating-bar"><img src="templates/kiosque/images/rating-star.png" alt="Rating Star"/></span>
-                    <div class="cart-price">
-                        <a class="cart-btn2" href="#">Add to Cart</a>
-                        <span class="price">$129.90</span>
-              		</div>
-                </figure>
-                <figure class="span3 slide">
-                	<a href="book-detail.html"><img src="templates/kiosque/images/image39.jpg" alt="" class="pro-img"/></a>
-                    <span class="title"><a href="book-detail.html">A Walk Across The Sun</a></span>
-                    <span class="rating-bar"><img src="templates/kiosque/images/rating-star.png" alt="Rating Star"/></span>
-                    <div class="cart-price">
-                        <a class="cart-btn2" href="cart.html">Add to Cart</a>
-                        <span class="price">$129.90</span>
-              		</div>
-                </figure>
-                <figure class="span3 slide">
-                	<a href="book-detail.html"><img src="templates/kiosque/images/image42.jpg" alt="" class="pro-img"/></a>
-                    <span class="title"><a href="book-detail.html">A Walk Across The Sun</a></span>
-                    <span class="rating-bar"><img src="templates/kiosque/images/rating-star.png" alt="Rating Star"/></span>
-                    <div class="cart-price">
-                        <a class="cart-btn2" href="cart.html">Add to Cart</a>
-                        <span class="price">$129.90</span>
-              		</div>
-                </figure>
-                <hr/>
-                <figure class="span3 slide first">
-                	<a href="book-detail.html"><img src="templates/kiosque/images/image38.jpg" alt="" class="pro-img"/></a>
-                    <span class="title"><a href="book-detail.html">A Walk Across The Sun</a></span>
-                    <span class="rating-bar"><img src="templates/kiosque/images/rating-star.png" alt="Rating Star"/></span>
-                    <div class="cart-price">
-                        <a class="cart-btn2" href="cart.html">Add to Cart</a>
-                        <span class="price">$129.90</span>
-              		</div>
-                </figure>
-                <figure class="span3 slide">
-                	<a href="book-detail.html"><img src="templates/kiosque/images/image25.jpg" alt="" class="pro-img"/></a>
-                    <span class="title"><a href="book-detail.html">A Walk Across The Sun</a></span>
-                    <span class="rating-bar"><img src="templates/kiosque/images/rating-star.png" alt="Rating Star"/></span>
-                    <div class="cart-price">
-                        <a class="cart-btn2" href="cart.html">Add to Cart</a>
-                        <span class="price">$129.90</span>
-              		</div>
-                </figure>
-                <figure class="span3 slide">
-                	<a href="book-detail.html"><img src="templates/kiosque/images/image40.jpg" alt="" class="pro-img"/></a>
-                    <span class="title"><a href="book-detail.html">A Walk Across The Sun</a></span>
-                    <span class="rating-bar"><img src="templates/kiosque/images/rating-star.png" alt="Rating Star"/></span>
-                    <div class="cart-price">
-                        <a class="cart-btn2" href="cart.html">Add to Cart</a>
-                        <span class="price">$129.90</span>
-              		</div>
-                </figure>
-                <figure class="span3 slide">
-                	<a href="book-detail.html"><img src="templates/kiosque/images/image41.jpg" alt="" class="pro-img"/></a>
-                    <span class="title"><a href="book-detail.html">A Walk Across The Sun</a></span>
-                    <span class="rating-bar"><img src="templates/kiosque/images/rating-star.png" alt="Rating Star"/></span>
-                    <div class="cart-price">
-                        <a class="cart-btn2" href="cart.html">Add to Cart</a>
-                        <span class="price">$129.90</span>
-              		</div>
-                </figure>
-            </section>
-            <div class="blog-footer">
-            	<div class="pagination">  
-                  <ul>  
-                    <li><a href="#">Prev</a></li>  
-                    <li class="active">  
-                      <a href="#">1</a>  
-                    </li>  
-                    <li><a href="#">2</a></li>  
-                    <li><a href="#">3</a></li>  
-                    <li><a href="#">4</a></li>  
-                    <li><a href="#">Next</a></li>  
-                  </ul>  
-                </div>
-                
-            	<ul class="product_view">
-               		<li>View as:</li>
-                    <li><a class="grid-view" href="grid-view.html">Grid View</a></li>
-                	<li><a class="list-view" href="list-view.html">List View</a></li>
-               </ul>
-            </div>
-            <!-- End Grid View Section -->
-            
-        </section>
-        <!-- End Main Content -->
-      
+			<!-- Start Main Content -->
+            <jdoc:include type="component" />
+            <!-- End Main Content -->
+        <!-- End Component View Section --> 
     </section>
   </section>
   <!-- End Main Content Holder -->
@@ -353,8 +165,8 @@ $app = JFactory::getApplication();
         <figure class="span3">
           <h4>Twitter</h4>
           <ul class="tweets-list">
-            <li>Bookshoppe’- WooCommerce theme by crunchpress http<a href="#">://z.8o/XcexW23Q #envato</a></li>
-            <li>Bookshoppe’- WooCommerce theme by crunchpress http<a href="#">://z.8o/XcexW23Q #envato</a></li>
+            <li>Kochk.com- Template theme by: <a href="#">http://www.siscom-inter.com/</a></li>
+            <li>Kochk.com- Template theme by: <a href="#">http://www.siscom-inter.com/</a></li>
           </ul>
         </figure>
         <figure class="span3">
@@ -398,27 +210,27 @@ $app = JFactory::getApplication();
           <h4>BestSellers</h4>
           <ul class="f2-img-list">
             <li>
-              <div class="left"><a href="book-detail.html"><img src="templates/kiosque/images/image19.jpg" /></a></div>
+              <div class="left"><a href="book-detail.html"><img src="images/image19.jpg" /></a></div>
               <div class="right"> <strong class="title"><a href="book-detail.html">fields</a></strong> <span class="by-author">by Arnold Grey</span> <span class="f-price">$127.55</span> </div>
             </li>
             <li>
-              <div class="left"><a href="book-detail.html"><img src="templates/kiosque/images/image31.jpg" /></a></div>
+              <div class="left"><a href="book-detail.html"><img src="images/image31.jpg" /></a></div>
               <div class="right"> <strong class="title"><a href="book-detail.html">Garfield</a></strong> <span class="by-author">by Arnold Grey</span> <span class="f-price">$127.55</span> </div>
             </li>
             <li>
-              <div class="left"><a href="book-detail.html"><img src="templates/kiosque/images/image32.jpg" /></a></div>
+              <div class="left"><a href="book-detail.html"><img src="images/image32.jpg" /></a></div>
               <div class="right"> <strong class="title"><a href="book-detail.html">Penselviniya</a></strong> <span class="by-author">by Arnold Grey</span> <span class="f-price">$127.55</span> </div>
             </li>
             <li>
-              <div class="left"><a href="book-detail.html"><img src="templates/kiosque/images/image33.jpg" /></a></div>
+              <div class="left"><a href="book-detail.html"><img src="images/image33.jpg" /></a></div>
               <div class="right"> <strong class="title"><a href="book-detail.html">Exemption</a></strong> <span class="by-author">by Arnold Grey</span> <span class="f-price">$127.55</span> </div>
             </li>
             <li>
-              <div class="left"><a href="book-detail.html"><img src="templates/kiosque/images/image34.jpg" /></a></div>
+              <div class="left"><a href="book-detail.html"><img src="images/image34.jpg" /></a></div>
               <div class="right"> <strong class="title"><a href="book-detail.html">Penfield</a></strong> <span class="by-author">by Arnold Grey</span> <span class="f-price">$127.55</span> </div>
             </li>
             <li>
-              <div class="left"><a href="book-detail.html"><img src="templates/kiosque/images/image32.jpg" /></a></div>
+              <div class="left"><a href="book-detail.html"><img src="images/image32.jpg" /></a></div>
               <div class="right"> <strong class="title"><a href="book-detail.html">Doors</a></strong> <span class="by-author">by Arnold Grey</span> <span class="f-price">$127.55</span> </div>
             </li>
           </ul>
@@ -427,28 +239,28 @@ $app = JFactory::getApplication();
           <h4>Top Rated</h4>
           <ul class="f2-img-list">
             <li>
-              <div class="left"><a href="book-detail.html"><img src="templates/kiosque/images/image35.jpg" alt=""/></a></div>
-              <div class="right"> <strong class="title"><a href="book-detail.html">A little rain</a></strong> <span class="by-author">by Arnold Grey</span> <span class="rating-bar"><img src="templates/kiosque/images/rating-star.png" alt="Rating Star"/></span> </div>
+              <div class="left"><a href="book-detail.html"><img src="images/image35.jpg" alt=""/></a></div>
+              <div class="right"> <strong class="title"><a href="book-detail.html">A little rain</a></strong> <span class="by-author">by Arnold Grey</span> <span class="rating-bar"><img src="images/rating-star.png" alt="Rating Star"/></span> </div>
             </li>
             <li>
-              <div class="left"><a href="book-detail.html"><img src="templates/kiosque/images/image33.jpg" alt="" /></a></div>
-              <div class="right"> <strong class="title"><a href="book-detail.html">Son of Arabia</a></strong> <span class="by-author">by Arnold Grey</span> <span class="rating-bar"><img src="templates/kiosque/images/rating-star.png" alt="Rating Star"/></span> </div>
+              <div class="left"><a href="book-detail.html"><img src="images/image33.jpg" alt="" /></a></div>
+              <div class="right"> <strong class="title"><a href="book-detail.html">Son of Arabia</a></strong> <span class="by-author">by Arnold Grey</span> <span class="rating-bar"><img src="images/rating-star.png" alt="Rating Star"/></span> </div>
             </li>
             <li>
-              <div class="left"><a href="book-detail.html"><img src="templates/kiosque/images/image32.jpg" alt="" /></a></div>
-              <div class="right"> <strong class="title"><a href="book-detail.html">Serpents</a></strong> <span class="by-author">by Arnold Grey</span> <span class="rating-bar"><img src="templates/kiosque/images/rating-star.png" alt="Rating Star"/></span> </div>
+              <div class="left"><a href="book-detail.html"><img src="images/image32.jpg" alt="" /></a></div>
+              <div class="right"> <strong class="title"><a href="book-detail.html">Serpents</a></strong> <span class="by-author">by Arnold Grey</span> <span class="rating-bar"><img src="images/rating-star.png" alt="Rating Star"/></span> </div>
             </li>
             <li>
-              <div class="left"><a href="book-detail.html"><img src="templates/kiosque/images/image34.jpg" alt="" /></a></div>
-              <div class="right"> <strong class="title"><a href="book-detail.html">Guns</a></strong> <span class="by-author">by Arnold Grey</span> <span class="rating-bar"><img src="templates/kiosque/images/rating-star.png" alt="Rating Star"/></span> </div>
+              <div class="left"><a href="book-detail.html"><img src="images/image34.jpg" alt="" /></a></div>
+              <div class="right"> <strong class="title"><a href="book-detail.html">Guns</a></strong> <span class="by-author">by Arnold Grey</span> <span class="rating-bar"><img src="images/rating-star.png" alt="Rating Star"/></span> </div>
             </li>
             <li>
-              <div class="left"><a href="book-detail.html"><img src="templates/kiosque/images/image19.jpg" alt=""/></a></div>
-              <div class="right"> <strong class="title"><a href="book-detail.html">Garfield</a></strong> <span class="by-author">by Arnold Grey</span> <span class="rating-bar"><img src="templates/kiosque/images/rating-star.png" alt="Rating Star"/></span> </div>
+              <div class="left"><a href="book-detail.html"><img src="images/image19.jpg" alt=""/></a></div>
+              <div class="right"> <strong class="title"><a href="book-detail.html">Garfield</a></strong> <span class="by-author">by Arnold Grey</span> <span class="rating-bar"><img src="images/rating-star.png" alt="Rating Star"/></span> </div>
             </li>
             <li>
-              <div class="left"><a href="book-detail.html"><img src="templates/kiosque/images/image35.jpg" alt="" /></a></div>
-              <div class="right"> <strong class="title"><a href="book-detail.html">Wolfman</a></strong> <span class="by-author">by Arnold Grey</span> <span class="rating-bar"><img src="templates/kiosque/images/rating-star.png" alt="Rating Star"/></span> </div>
+              <div class="left"><a href="book-detail.html"><img src="images/image35.jpg" alt="" /></a></div>
+              <div class="right"> <strong class="title"><a href="book-detail.html">Wolfman</a></strong> <span class="by-author">by Arnold Grey</span> <span class="rating-bar"><img src="images/rating-star.png" alt="Rating Star"/></span> </div>
             </li>
           </ul>
         </figure>

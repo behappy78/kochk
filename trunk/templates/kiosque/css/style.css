@@ -458,14 +458,16 @@ margin-bottom:0;
 .form-horizontal .control-label{display: block; float: none; text-align: left;}
 .form-horizontal .control-group{ margin:0 0 5px;}
 .check-method-right input[type="text"]{ width:96%;}
-.checkout-holder{ border:1px solid #E5E5E5; overflow:hidden; margin-bottom:70px;}
-.checkout-holder .accordion-group{ border-left:0; border-top:0;}
-.checkout-holder .accordion{ margin:0;}
-.checkout-holder [class*="span"]{ margin-bottom:0 !important;}
+.register-holder{ border:1px solid #E5E5E5; overflow:hidden; margin-bottom:70px;}
+.register-holder .accordion-group{ border-left:0; border-top:0;}
+.register-holder .accordion{ margin:0;}
+.register-holder [class*="span"]{ margin-bottom:0 !important;}
 .review-list{ margin:0; list-style:none;}
 .review-list a{ color:#000; display:block;}
-.checkout-holder .row-fluid .span3{ width:25.6%;}
-
+.register-holder .row-fluid .span3{ width:25.6%;}
+.register-form-heading { border-bottom: 0; background:#fafafa;}
+.register-form-heading h3{ color:#b4b4b4; font-size:18px; outline:none;	line-height:20px; margin:0px;}
+.register-form-heading .register-form-toggle { display: block; padding: 8px 15px; }
 /* End Check Method Section */
 
 /* Start Order Review Section */
