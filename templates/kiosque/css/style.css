@@ -111,6 +111,7 @@ a img:hover { opacity:0.6; transition: width 1s; -moz-transition: 1s; /* Firefox
 #main-header .navbar-inverse .brand,
 #main-header .navbar-inverse .nav > li > a { color: #3c3c3c; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.0); border-bottom: 3px solid transparent; }
 #main-header .navbar-inverse .nav > li > a:hover { color:#000; background-color:rgba(37, 36, 36); background-color:rgba(37, 36, 36, 0.1); border-bottom: 3px solid #cccc00; }
+#main-header .navbar-inverse .nav > li > a.active { border-bottom: 3px solid #cccc00; }
 #main-header .dropdown-menu { left:0; right:auto; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; }
 #main-header .navbar-inverse .nav li.dropdown.open > .dropdown-toggle,
 #main-header .navbar-inverse .nav li.dropdown.active > .dropdown-toggle,

@@ -104,6 +104,12 @@ $app = JFactory::getApplication();
         <div class="navbar-inner">
           <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
           <div class="nav-collapse collapse">
+          
+          <!-- Start Nav Bar Module -->
+          <jdoc:include type="modules" name="position-1" />
+          <!-- End Nav Bar Module --> 
+          
+          <!--
             <ul class="nav">
               <li> <a href="grid-view.html">Books</a> </li>
               <li> <a href="grid-view.html">NOOK Books</a></li>
@@ -135,6 +141,8 @@ $app = JFactory::getApplication();
               <li> <a href="grid-view.html">Gift Cards</a> </li>
               <li><a href="grid-view.html">Deals & Offers</a></li>
             </ul>
+				 --> 
+            
           </div>
           <!--/.nav-collapse --> 
         </div>
