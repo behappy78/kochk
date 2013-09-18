@@ -23,6 +23,8 @@ defined('_JEXEC') or die;
 foreach ($list as $i => &$item) :
 	//$class = 'item-'.$item->id;
 	$class = null;
+	$styl = null;
+
 	if ($item->id == $active_id) {
 		$class .= ' current';
 	}
@@ -41,7 +43,8 @@ foreach ($list as $i => &$item) :
 	}
 
 	if ($item->deeper) {
-		$class .= ' deeper';
+		//$class .= ' deeper';
+		$styl = ' class="dropdown"';
 	}
 
 	if ($item->parent) {
@@ -49,11 +52,15 @@ foreach ($list as $i => &$item) :
 	}
 
 	if (!empty($class)) {
+		if ($item->deeper){
+			$class = ' class="dropdown-toggle" data-toggle="dropdown"';
+		}else{		
 		$class = ' class="'.trim($class) .'"';
+		}
 	}
 
 	//echo '<li'.$class.'>';
-	echo '<li><a '.$class.' '; //added by Mehdi
+	echo '<li'.$styl.'><a '.$class.' '; //added by Mehdi
 
 	// Render the menu item.
 	switch ($item->type) :
@@ -70,7 +77,7 @@ foreach ($list as $i => &$item) :
 
 	// The next item is deeper.
 	if ($item->deeper) {
-		echo '<ul>';
+		echo '<ul class="dropdown-menu">';
 	}
 	// The next item is shallower.
 	elseif ($item->shallower) {
