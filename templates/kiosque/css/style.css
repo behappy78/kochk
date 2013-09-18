@@ -359,6 +359,10 @@ margin-bottom:0;
 .post-nav li a{ color:#323232;}
 
 .more-btn{ float:right; background:#cccc00; padding:4px 14px; font-size:12px; color:#fff; border:0; text-transform:uppercase;}
+.left{float:left;}
+.right{float:right;}
+.center{text-align:center;}
+.nofloat{float:none;}
 .more-btn:hover{ text-decoration:none;}
 .more-btn.left{ float:left; margin-right:10px;}
 
@@ -458,6 +462,7 @@ margin-bottom:0;
 .form-horizontal .control-label{display: block; float: none; text-align: left;}
 .form-horizontal .control-group{ margin:0 0 5px;}
 .check-method-right input[type="text"]{ width:96%;}
+.check-method-left input[type="text"]{ width:60%;}
 .register-holder{ border:1px solid #E5E5E5; overflow:hidden; margin-bottom:70px;}
 .register-holder .accordion-group{ border-left:0; border-top:0;}
 .register-holder .accordion{ margin:0;}
