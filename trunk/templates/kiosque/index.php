@@ -13,6 +13,7 @@ $app = JFactory::getApplication();
 <head>
 <jdoc:include type="head" />
 
+
 <!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -26,32 +27,37 @@ $app = JFactory::getApplication();
 <meta name="viewport" content="width=device-width">
 <!-- Css Files Start -->
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/system.css" type="text/css" />
-<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/style.css" rel="stylesheet" type="text/css" /><!-- All css -->
-<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/bs.css" rel="stylesheet" type="text/css" /><!-- Bootstrap Css -->
-<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/main-slider.css" /><!-- Main Slider Css -->
+<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/style.css" rel="stylesheet" type="text/css" />
+<!-- All css -->
+<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/bs.css" rel="stylesheet" type="text/css" />
+<!-- Bootstrap Css -->
+<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/main-slider.css" type="text/css" />
+<!-- Main Slider Css -->
 <!--[if lte IE 10]><link rel="stylesheet" type="text/css" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/customIE.css" /><![endif]-->
-<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/font-awesome.css" rel="stylesheet" type="text/css" /><!-- Font Awesome Css -->
-<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/font-awesome-ie7.css" rel="stylesheet" type="text/css" /><!-- Font Awesome iE7 Css -->
+<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/font-awesome.css" rel="stylesheet" type="text/css" />
+<!-- Font Awesome Css -->
+<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/font-awesome-ie7.css" rel="stylesheet" type="text/css" />
+<!-- Font Awesome iE7 Css -->
 <noscript>
-<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/noJS.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/noJS.css" />
 </noscript>
 <!-- Css Files End -->
+
 </head>
 <body>
 <!-- Start Main Wrapper -->
-<div class="wrapper">
-  <!-- Start Main Header -->
+<div class="wrapper"> 
+  <!-- Start Main Header --> 
   <!-- Start Top Nav Bar -->
   <section class="top-nav-bar">
     <section class="container-fluid container">
       <section class="row-fluid">
-        <section class="span6">
+        <section class="span6"> 
           <!-- Start Top Nav Bar Module -->
-          <jdoc:include type="modules" name="topmenu" />
-          <!-- End Top Nav Bar Module -->
+          <jdoc:include type="modules" name="position-0" />
+          <!-- End Top Nav Bar Module --> 
         </section>
         <section class="span6 e-commerce-list">
-        	<jdoc:include type="modules" name="position-0" />
           <ul>
             <li>Welcome! <a href="checkout.html">Login</a> or <a href="checkout.html">Create an account</a></li>
             <li class="p-category"><a href="#">$</a> <a href="#">£</a> <a href="#">€</a></li>
@@ -107,15 +113,15 @@ $app = JFactory::getApplication();
               <li><a href="grid-view.html">Toys & Games</a></li>
               <li class="dropdown"> <a class="dropdown-toggle" href="grid-view.html" data-toggle="dropdown"><i class="icon-heart"></i> Features<b class="caret"></b> </a>
                 <ul class="dropdown-menu">
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="blog-detail.html">Blog Detail</a></li>
-                    <li><a href="grid-view.html">Product Grid View</a></li>
-                    <li><a href="list-view.html">Product List View</a></li>
-                    <li><a href="grid-view-without-side-bar.html">Product Grid View Without Side Bar</a></li>
-                    <li><a href="shortcodes.html">Short Codes</a></li>
-                    <li><a href="blog-detail.html">News</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                  <li><a href="about-us.html">About Us</a></li>
+                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="blog-detail.html">Blog Detail</a></li>
+                  <li><a href="grid-view.html">Product Grid View</a></li>
+                  <li><a href="list-view.html">Product List View</a></li>
+                  <li><a href="grid-view-without-side-bar.html">Product Grid View Without Side Bar</a></li>
+                  <li><a href="shortcodes.html">Short Codes</a></li>
+                  <li><a href="blog-detail.html">News</a></li>
+                  <li><a href="contact.html">Contact Us</a></li>
                 </ul>
               </li>
               <li class="dropdown"> <a class="dropdown-toggle" href="grid-view.html" data-toggle="dropdown">Movies & TV <b class="caret"></b> </a>
@@ -130,28 +136,29 @@ $app = JFactory::getApplication();
               <li><a href="grid-view.html">Deals & Offers</a></li>
             </ul>
           </div>
-          <!--/.nav-collapse -->
+          <!--/.nav-collapse --> 
         </div>
-        <!-- /.navbar-inner -->
+        <!-- /.navbar-inner --> 
       </div>
-      <!-- /.navbar -->
+      <!-- /.navbar --> 
     </nav>
-    <!-- End Main Nav Bar -->
+    <!-- End Main Nav Bar --> 
   </header>
-  <!-- End Main Header -->
+  <!-- End Main Header --> 
   <!-- Start Main Content Holder -->
   <section id="content-holder" class="container-fluid container">
-    <section class="row-fluid">
-    
-    	<!-- Start Component View Section -->
-            <jdoc:include type="message" />
-			<!-- Start Main Content -->
-            <jdoc:include type="component" />
-            <!-- End Main Content -->
-        <!-- End Component View Section --> 
+    <section class="row-fluid"> 
+      
+      <!-- Start Component View Section -->
+      <?php require_once JPATH_ROOT .'/templates/'. $this->template .'/html/message.php'; ?>
+      <jdoc:include type="message" />
+      <!-- Start Main Content -->
+      <jdoc:include type="component" />
+      <!-- End Main Content --> 
+      <!-- End Component View Section --> 
     </section>
   </section>
-  <!-- End Main Content Holder -->
+  <!-- End Main Content Holder --> 
   <!-- Start Footer Top 1 -->
   <section class="container-fluid footer-top1">
     <section class="container">
@@ -189,7 +196,7 @@ $app = JFactory::getApplication();
       </section>
     </section>
   </section>
-  <!-- End Footer Top 1 -->
+  <!-- End Footer Top 1 --> 
   <!-- Start Footer Top 2 -->
   <section class="container-fluid footer-top2">
     <section class="social-ico-bar">
@@ -275,7 +282,7 @@ $app = JFactory::getApplication();
       </section>
     </section>
   </section>
-  <!-- End Footer Top 2 -->
+  <!-- End Footer Top 2 --> 
   <!-- Start Main Footer -->
   <footer id="main-footer">
     <section class="social-ico-bar">
@@ -291,21 +298,21 @@ $app = JFactory::getApplication();
       </section>
     </section>
   </footer>
-  <!-- End Main Footer -->
+  <!-- End Main Footer --> 
 </div>
-<!-- End Main Wrapper -->
+<!-- End Main Wrapper --> 
 <!-- JS Files Start -->
-<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/lib.js"></script><!-- lib Js -->
-<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/modernizr.js"></script><!-- Modernizr -->
-<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/easing.js"></script><!-- Easing js -->
-<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/bs.js"></script><!-- Bootstrap -->
-<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/bxslider.js"></script><!-- BX Slider -->
-<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/input-clear.js"></script><!-- Input Clear -->
-<script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/range-slider.js"></script><!-- Range Slider -->
-<script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/jquery.zoom.js"></script><!-- Zoom Effect -->
-<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/bookblock.js"></script><!-- Flip Slider -->
-<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/custom.js"></script><!-- Custom js -->
-<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/social.js"></script><!-- Social Icons -->
+<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/lib.js"></script><!-- lib Js --> 
+<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/modernizr.js"></script><!-- Modernizr --> 
+<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/easing.js"></script><!-- Easing js --> 
+<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/bs.js"></script><!-- Bootstrap --> 
+<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/bxslider.js"></script><!-- BX Slider --> 
+<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/input-clear.js"></script><!-- Input Clear --> 
+<script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/range-slider.js"></script><!-- Range Slider --> 
+<script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/jquery.zoom.js"></script><!-- Zoom Effect --> 
+<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/bookblock.js"></script><!-- Flip Slider --> 
+<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/custom.js"></script><!-- Custom js --> 
+<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/social.js"></script><!-- Social Icons --> 
 <!-- JS Files End -->
 <noscript>
 <style>
@@ -315,8 +322,9 @@ $app = JFactory::getApplication();
 </noscript>
 <script type="text/javascript">
   /* <![CDATA[ */
-  $(document).ready(function() {
-  $('.social_active').hoverdir( {} );
+    jQuery(document).ready(function() { 
+	jQuery.noConflict();
+	jQuery('.social_active').hoverdir( {} );
 })
 /* ]]> */
 </script>

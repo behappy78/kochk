@@ -1678,9 +1678,9 @@
             that.$element.trigger(completeEvent)
           }
 
-      this.$element.trigger(startEvent)
+      //this.$element.trigger(startEvent)
 
-      if (startEvent.isDefaultPrevented()) return
+      //if (startEvent.isDefaultPrevented()) return
 
       this.transitioning = 1
 
