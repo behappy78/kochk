@@ -82,7 +82,7 @@ $app = JFactory::getApplication();
     <section class="container-fluid container">
       <section class="row-fluid">
         <section class="span4">
-          <h1 id="logo"> <a href="index-2.html"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/logo_kochk.png" /></a> </h1>
+          <h1 id="logo"> <a href="./"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/logo_kochk.png" /></a> </h1>
         </section>
         <section class="span8">
           <ul class="top-nav2">
