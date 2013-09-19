@@ -48,14 +48,9 @@ $maxSteps = (int)$session->get('maxSteps_');
 <!-- Start Main Content -->
 <section class="register-holder">
   <section class="span12 first">
-    <div class="accordion" id="accordion2">
-      <div class="accordion-group">
-        <div class="register-form-heading">
-          <h3 class="register-form-toggle"> Checkout Method </h3>
-        </div>
-        <div id="collapseOne" class="accordion-body collapse in">
-          <div class="accordion-inner">
-                	<strong class="green-t">Checkout as Guest</strong>
+  <div class="title-bar"> <strong>Etape 1: Données d'identification:</strong> </div>
+    <div class="side-holder frombox">
+                	
                     <form class="form-horizontal">
                         <ul class="billing-form">
                             <li>
@@ -69,15 +64,15 @@ $maxSteps = (int)$session->get('maxSteps_');
                             </li>
                             <li>   
                               <div class="control-group">
-                                <label class="control-label" for="inputPassword">Mot de passe <sup>*</sup></label>
+                                <label class="control-label" for="Password">Mot de passe <sup>*</sup></label>
                                 <div class="controls">
-                                  <input type="password" id="inputPassword" placeholder="">
+                                  <input type="password" id="Password" placeholder="">
                                 </div>
                               </div>
                               <div class="control-group">
-                                <label class="control-label" for="confirmPassword">Confirmez Mot de passe <sup>*</sup></label>
+                                <label class="control-label" for="confPassword">Confirmez Mot de passe <sup>*</sup></label>
                                 <div class="controls">
-                                  <input type="text" id="confirmPassword" placeholder="">
+                                  <input type="password" id="confPassword" placeholder="">
                                 </div>
                               </div>
                             </li>
@@ -86,6 +81,7 @@ $maxSteps = (int)$session->get('maxSteps_');
                                 <label class="control-label" for="inputEmail">Adresse Email <sup>*</sup></label>
                                 <div class="controls">
                                   <input type="text" id="inputEmail" placeholder="">
+                                   <strong class="red-t">* Données Requises</strong>
                                 </div>
                               </div>
                               <div class="control-group">
@@ -105,9 +101,6 @@ $maxSteps = (int)$session->get('maxSteps_');
                         </ul>
                     </form>
                 </div>
-        </div>
-      </div>
-    </div>
   </section>
 </section>
 

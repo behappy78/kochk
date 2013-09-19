@@ -75,6 +75,7 @@ time { display:inline }
 /* Getting the new tags to behave */
 
 /* Start form defaults */
+.register-holder .frombox{ padding: 9px 15px;}
 input,
 select,
 textarea { font-family:Arial, Helvetica, sans-serif; font-size:1em; vertical-align:middle; font-weight:normal; color:#393939; margin:0; padding:0; }
@@ -360,10 +361,7 @@ margin-bottom:0;
 .post-nav li a{ color:#323232;}
 
 .more-btn{ float:right; background:#cccc00; padding:4px 14px; font-size:12px; color:#fff; border:0; text-transform:uppercase;}
-.left{float:left;}
-.right{float:right;}
-.center{text-align:center;}
-.nofloat{float:none;}
+
 .more-btn:hover{ text-decoration:none;}
 .more-btn.left{ float:left; margin-right:10px;}
 
@@ -441,7 +439,9 @@ margin-bottom:0;
 .right-sec{ float:left; width:70%; border-left:1px solid #dcdcdc;}
 .right-sec.r-border{border-right:1px solid #dcdcdc;min-height: 400px; padding: 3%; width: 64%;}
 .r-title-bar{ background:#fafafa; padding:8px 10px; font-size:18px; color:#000; border-bottom:1px solid #dcdcdc; margin-bottom:20px;}
+.register-holder .title-bar{ background:#fafafa; padding:8px 10px; font-size:18px; color:#000; border-bottom:1px solid #dcdcdc; margin-bottom:20px;}
 .r-title-bar strong{ font-weight:normal;}
+.register-holder .title-bar strong{ font-weight:normal;}
 .review-list{ list-style:none; margin:0; padding:0 20px; font-size:12px;}
 .review-list em{ display:block; margin:0 0 10px; color:#cccc00; font-style:normal;}
 .review-list li{ margin:0 0 10px; padding:0 0 10px; border-bottom:1px dotted #dcdcdc;}
@@ -459,8 +459,14 @@ margin-bottom:0;
 /* Start Check Method Section */
 .check-method-left{ color:#000; border-right:1px solid #dcdcdc; padding-right:30px;}
 .green-t{ display:block; margin:0 0 10px; color:#cccc00;}
+.red-t{ display:block; margin:0 0 10px; color:#FF282C;}
 .form-horizontal .controls{ margin:0;}
 .form-horizontal .control-label{display: block; float: none; text-align: left;}
+.register-vcode .control-label{font-size:16px; color:#CCCC00; font-weight:bold;}
+.register-vcode .input{
+	-webkit-border-radius: 3px;  
+    -moz-border-radius: 3px;  
+    border-radius: 3px;}
 .form-horizontal .control-group{ margin:0 0 5px;}
 .check-method-right input[type="text"]{ width:96%;}
 .check-method-left input[type="text"]{ width:60%;}
@@ -497,6 +503,7 @@ margin-bottom:0;
 .billing-form input[type="text"].address-field{ width:593px;}
 .billing-form select{ width:287px; font-size:12px;}
 .billing-form .green-t{ margin:10px 0 0;}
+.billing-form .red-t{ margin:10px 0 0;}
 .b-label{float: left !important; margin-right: 20px; margin-top: 10px !important;}
 /* Start Billing Info Section */
 
@@ -610,3 +617,15 @@ h3.sub-heading-404{ font-size: 26px; text-align: center;}
 .the-icons li { float: left; line-height: 25px; width: 25%; }
 /*----------- End Icons Dividers -----------*/
 /* End Short Codes Styling */
+
+/*----------- Forcing Alignement -----------*/
+.left{float:left;}
+.right{float:right;}
+.center{text-align:center;}
+.nofloat{float:none;}
+.center .control-label,
+.center input[type="number"],
+.center input[type="number"]:focus
+{text-align:center;}
+.register-vcode input[type="number"],
+.register-vcode input[type="number"]:focus{font-size:16px; font-weight:bold !important;}
