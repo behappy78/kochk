@@ -77,7 +77,7 @@ $maxSteps = (int)$session->get('maxSteps_');
                               <div class="control-group">
                                 <label class="control-label" for="confirmPassword">Confirmez Mot de passe <sup>*</sup></label>
                                 <div class="controls">
-                                  <input type="text" id="confirmPassword" placeholder="">
+                                  <input type="password" id="confirmPassword" placeholder="">
                                 </div>
                               </div>
                             </li>
