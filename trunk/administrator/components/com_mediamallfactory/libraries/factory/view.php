@@ -94,46 +94,67 @@ class FactoryView extends JView
     $this->setTitle();
 
     // Add buttons
-    foreach ($this->buttons as $button) {
-      switch ($button) {
+    foreach ($this->buttons as $button1=>$value) {
+        $name = $this->getName();
+        $button = $button1;
+                
+        if ($button1 == 'add' || $button1 == 'edit')
+        {
+            if ($value)
+            {
+                $name = $value;
+            }
+        }
+        else 
+        {
+            $button = $value;
+        }
+        
+        if ($value == 'add' || $value == 'edit')
+        {
+                $name = rtrim($this->getName(), 's');
+                $button = $value;
+            
+        }
+        switch ($button) {
         case '':
           JToolBarHelper::divider();
           break;
 
         case 'add':
-          JToolBarHelper::addNew(rtrim($this->getName(), 's').'.add');
+          JToolBarHelper::addNew($name.'.add');
           break;
 
         case 'edit':
-          JToolBarHelper::editList(rtrim($this->getName(), 's').'.edit');
+          JToolBarHelper::editList($name.'.edit');
           break;
 
         case 'publish':
-          JToolBarHelper::publishList($this->getName().'.publish');
+          JToolBarHelper::publishList($name.'.publish');
           break;
 
         case 'unpublish':
-          JToolBarHelper::unpublishList($this->getName().'.unpublish');
+          JToolBarHelper::unpublishList($name.'.unpublish');
           break;
 
         case 'delete':
-          JToolBarHelper::deleteList(FactoryText::_('list_delete'), $this->getName().'.delete');
+          JToolBarHelper::deleteList(FactoryText::_('list_delete'), $name.'.delete');
           break;
 
         case 'apply':
-          JToolBarHelper::apply($this->getName().'.apply');
+          JToolBarHelper::apply($name.'.apply');
           break;
 
         case 'save':
-          JToolBarHelper::save($this->getName().'.save');
+          JToolBarHelper::save($name.'.save');
           break;
 
         case 'save2new':
-          JToolBarHelper::save2new($this->getName().'.save2new');
+          JToolBarHelper::save2new($name.'.save2new');
           break;
 
         case 'close':
-          JToolBarHelper::cancel($this->getName().'.cancel', (isset($this->item) && $this->item->{$this->id} ? 'JTOOLBAR_CLOSE' : 'JTOOLBAR_CANCEL'));
+          JToolBarHelper::cancel($name.'.cancel', (isset($this->item) && $this->item->{$this->id} ? 'JTOOLBAR_CLOSE' : 'JTOOLBAR_CANCEL'));
           break;
 
         case 'back':
@@ -141,11 +162,11 @@ class FactoryView extends JView
           break;
 
         default:
-          JToolBarHelper::custom($this->getName().'.' . $button[0], $button[2], $button[2], FactoryText::_($button[1]), $button[3]);
+          JToolBarHelper::custom($name.'.' . $button[0], $button[2], $button[2], FactoryText::_($button[1]), $button[3]);
           break;
       }
     }
-
+//die();
     // Set view icon.
     jimport('joomla.filesystem.file');
     $path = FactoryApplication::getInstance()->getPath('component_administrator').DS.'assets'.DS.'images'.DS.'views';

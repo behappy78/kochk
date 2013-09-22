@@ -8,47 +8,7 @@
 
 // No direct access.
 defined('_JEXEC') or die;
-/*
-$session =& JFactory::getSession();
-$orders = array();
-$orders[0] = "FIRST" ;
-$orders[1] = "SECOND" ;
-$orders[2] = "THIRD" ;
-$orders[3] = "FOURTH" ;
-$orders[4] = "FIFTH" ;
-echo "ID: ".$session->getId();
-//$session->set('place','Kotdwara');
-$session->set('myarray',$orders);
-echo "<br />Count: ".$session->get('session.counter');
-$uri = &JURI::getInstance();
-$myabsoluteurl = $uri->toString(array('path'));
-$option =JRequest::getVar('option');
-$view =JRequest::getVar('view');
-//echo "<br/>".$myabsoluteurl;
-echo "<br/>Option ".$option;
-echo "<br/>View ".$view;
-if($session->isNew())
-{
-    echo "<br />NEW ";
-}
-else{
-    echo "<br />OLD ";
-}
-if($session->has('place12'))
-{
-    echo "<br />HAS ";
-}
-else{
-    echo "<br />NOHAS ";
-}
-$mygetarray = $session->get('myarray');
-echo "<br />Place: ".$session->get('place','PLACE');
-echo "<br />Expire: ".$session->getExpire();
-echo "<br />State: ".$session->getState();
-echo "<br />Session Name: ".$session->getName();
-echo "<br />ONE: ".$mygetarray[1];
-echo "<br />Token: ".$session->getToken();
-*/
+
 jimport('joomla.filesystem.file');
 
 // check modules

@@ -3,7 +3,7 @@
 /**------------------------------------------------------------------------
 com_mediamallfactory - Media Mall Factory 3.3.5 
 ------------------------------------------------------------------------
- * @author TheFactory
+ * @author Feki Hichem
  * @copyright Copyright (C) 2011 SKEPSIS Consult SRL. All Rights Reserved.
  * @license - http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  * Websites: http://www.thefactory.ro
@@ -16,6 +16,7 @@ class MediaMallFactoryFrontendControllerRegistration extends JController
 {
   public function __construct($config = array())
   {
+     
     parent::__construct($config);
     
     $this->registerTask('apply', 'save');

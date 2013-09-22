@@ -29,19 +29,26 @@ class MediaMallFactoryFrontendModelRegistration extends JModel
   
     $data    = JRequest::get( 'post' );
     if ($data){
-        if (!JSession::checkToken()) jexit(JText::_('JINVALID_TOKEN'));
-        print_r($data['registration']);
+        //if (!JSession::checkToken()) jexit(JText::_('JINVALID_TOKEN'));
+        //print_r($data);
         $step_todo = (int)$data['step'];
+        
         $session =& JFactory::getSession();
+        
         $step = $session->get('step');
+        
         $maxSteps = (int)$session->get('maxSteps_');
-        $formulaire = $data['registration'];
+        //echo $maxSteps;
+        //die();
+        $formulaire = $data;
+        
         /*
          * @author Feki Hichem
          * Description Save the data to temp until it finishes entering all Datas 
          */
         if ($step < 1)
             $step = 1;
+            //echo "todo: ".$step_todo;
         switch ($step_todo) {
             case 1: if ($step < $maxSteps)
                     $step ++;
@@ -57,7 +64,6 @@ class MediaMallFactoryFrontendModelRegistration extends JModel
             break;
         }
         $session->set("step", $step);  
-              
        }
     //echo '<div id="kochkmain">';   
     parent::__construct($config);  
@@ -94,6 +100,7 @@ class MediaMallFactoryFrontendModelRegistration extends JModel
         $session->set($name, $value);
     }
     //die();
+    
     for ($i=1;$i<=4;$i++){
         if ($i != $step)
             $form->removeFieldset($i);
