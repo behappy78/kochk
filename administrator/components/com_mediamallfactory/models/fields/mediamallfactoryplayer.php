@@ -41,7 +41,6 @@ class JFormFieldMediaMallFactoryPlayer extends JFormFieldList
 
       $options[(string)$xml->name] = $title;
     }
-
     return $options;
   }
 }

@@ -14,93 +14,150 @@ defined('_JEXEC') or die;
 JHTML::_('behavior.mootools');
 JHTML::_('behavior.framework', true);
 $document = JFactory::getDocument();
-$link = FactoryRoute::view('registration');
+$link = $url=JRoute::_(JURI::base()."index.php?option=com_mediamallfactory&view=registration");
+$link1 = $url=JRoute::_(JURI::base()."index.php?option=com_mediamallfactory&view=ajax&format=raw");
 $link .= "&format=raw"; 
 // Add Javascript
 $document->addScriptDeclaration("
-			function submitFormK(e) {
+	window.addEvent('domready', function(){
+	Locale.use('fr-FR');
+  var myForm = document.id('adminForm');
+    //myResult = document.id('myResult');
 
-				// Prevents the default submit event from loading a new page.
-				//e.stop();
-				//alert('dsfgdfgdfg'+e);
+  // Labels over the inputs.
+  myForm.getElements('[type=password],[type=text], textarea').each(function(el){
+    new OverText(el);
+  });
+  //new Form.Validator.Inline(myForm);
+ myFormValidator = new Form.Validator.Inline(myForm, {
+	  stopOnFailure: true, 
+      useTitles: true,
+      serial: false,
+      errorPrefix: '',
+      onFormValidate: function(passed, form, event) {
+         if (passed) {
+            //form.submit();
+         }
+      }
+   });
+   var myurl = '".$link1."&layout=ajax&tmpl=component';
+   
+   myFormValidator.add('emailUnique', {
+   errorMsg: 'E-Mail address is already registered',
+   test: function(element, props) {
+      if (element.value.length > 0) {
+         var req = new Request({
+            url: myurl+'&src=email',
+            async: false
+         }).send('data=' + element.value);
+         //alert (req.response.text);
+         return (req.response.text != '1');
+         
+      }
+      return true;
+   }
+});
+
+   myFormValidator.add('loginUnique', {
+   errorMsg: 'login is already taken',
+   test: function(element, props) {
+      if (element.value.length > 0) {
+         var req = new Request({
+            url: myurl+'&src=login',
+            async: false
+         }).send('data=' + element.value);
+         //alert (req.response.text);
+         return (req.response.text != '1');
+         
+      }
+      return true;
+   }
+});
+
+  // Ajax (integrates with the validator).
+  //new Form.Request(myForm, myResult, {requestOptions: {'spinnerTarget': myForm}, extraData: {'html': 'Form sent.'}});
+
+	});
+");
+$document->addScriptDeclaration("
+			function submitFormK(e) {
+				//alert('submit'+e);
 				theform = document.id('adminForm');
+				var validator = new Form.Validator.Inline(theform);
+   var myurl = '".$link1."&layout=ajax&tmpl=component';
+   
+   validator.add('emailUnique', {
+   errorMsg: 'E-Mail address is already registered',
+   test: function(element, props) {
+      if (element.value.length > 0) {
+         var req = new Request({
+            url: myurl+'&src=email',
+            async: false
+         }).send('data=' + element.value);
+         //alert (req.response.text);
+         return (req.response.text != '1');
+         
+      }
+      return true;
+   }
+});
+
+   validator.add('loginUnique', {
+   errorMsg: 'login is already taken',
+   test: function(element, props) {
+      if (element.value.length > 0) {
+         var req = new Request({
+            url: myurl+'&src=login',
+            async: false
+         }).send('data=' + element.value);
+         //alert (req.response.text);
+         return (req.response.text != '1');
+         
+      }
+      return true;
+   }
+});				
+				validator.validate();
+				if (!validator.validate())
+					return false;
 				document.id('step').value = e;
-				//alert('before send');
-				theform.set('send', {
+				kochkmain = document.id('kochkmain');
+				kochkmain.set('tween', {duration: 1000, link:'chain', property:'opacity'});
+				myFX = new Fx.Tween('kochkmain', { duration: 1000, property: 'opacity', link: 'chain'});
+				
+                theform.set('send', {
 					onComplete: function(response) {
-						document.id('kochkmain').set('html', response);
+					    myFX.start.pass([1,0], myFX).delay(00);
+						setTimeout(function() { kochkmain.set('html', response); },1000)
+						myFX.start.pass([0,1], myFX).delay(1000);
 					}
 				});
-				// Send the form.
 				theform.send();
-				
 			};
- 
 ");
 $session =& JFactory::getSession();
 $step = $session->get('step'); 
 $maxSteps = (int)$session->get('maxSteps_');
 ?>
+    <form action="<?php echo $link ?>" id="adminForm" name="adminForm" method="post" class="form-validate form-horizontal">
+<div <?php if ($step == 1) echo 'id="kochkmain"';?> >
+    <input type="hidden" name="task" value="" />
+    <input type="hidden" name="step" id="step" value="" />
+    <?php echo JHtml::_('form.token'); ?>
 
-<div <?php if ($step == 1) echo 'id="kochkmain"';?> class="heading-bar">
+ <div class="heading-bar">
   <h2><?php echo FactoryText::_('register_page_title'); ?></h2>
-  <span class="h-line"></span> </div>
+   <span class="h-line"></span> </div>
 <!-- Start Main Content -->
 <section class="register-holder">
   <section class="span12 first">
-  <div class="title-bar"> <strong>Etape 1: Données d'identification:</strong> </div>
-    <div class="side-holder frombox">
-                	
-                    <form class="form-horizontal">
-                        <ul class="billing-form">
-                            <li>
-                              <div class="control-group">
-                                <label class="control-label" for="loginId">Identifiant<sup>*</sup></label>
-                                <div class="controls">
-                                  <input type="text" id="loginId" placeholder="A-z, 0-9">
-                                </div>
-                              </div>
-                              
-                            </li>
-                            <li>   
-                              <div class="control-group">
-                                <label class="control-label" for="Password">Mot de passe <sup>*</sup></label>
-                                <div class="controls">
-                                  <input type="password" id="Password" placeholder="">
-                                </div>
-                              </div>
-                              <div class="control-group">
-                                <label class="control-label" for="confPassword">Confirmez Mot de passe <sup>*</sup></label>
-                                <div class="controls">
-                                  <input type="password" id="confPassword" placeholder="">
-                                </div>
-                              </div>
-                            </li>
-                            <li>   
-                              <div class="control-group">
-                                <label class="control-label" for="inputEmail">Adresse Email <sup>*</sup></label>
-                                <div class="controls">
-                                  <input type="text" id="inputEmail" placeholder="">
-                                   <strong class="red-t">* Données Requises</strong>
-                                </div>
-                              </div>
-                              <div class="control-group">
-                                <label class="control-label" for="confirmEmail">Confirmez Adresse Email <sup>*</sup></label>
-                                <div class="controls">
-                                  <input type="text" id="confirmEmail" placeholder="">
-                                </div>
-                              </div>
-                            </li>
-                        	<li>
-                            	<div class="control-group">
-                                <div class="controls">
-                                  <button type="submit" class="more-btn">Continuer</button>
-                                </div>
-                              </div>
-                            </li>
-                        </ul>
-                    </form>
-                </div>
-  </section>
+    <?php echo $this->loadTemplate($step);
+     $url=JRoute::_(JURI::base()."index.php?option=com_mediamallfactory&view=list");
+    ?>
+        </section>
 </section>
-
+	<?php 
+    if ($step == 1)
+    echo '</div>';
+	?>
+  </form>

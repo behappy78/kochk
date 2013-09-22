@@ -315,7 +315,7 @@ $app = JFactory::getApplication();
 <script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/easing.js"></script><!-- Easing js --> 
 <script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/bs.js"></script><!-- Bootstrap --> 
 <script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/bxslider.js"></script><!-- BX Slider --> 
-<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/input-clear.js"></script><!-- Input Clear --> 
+<!-- <script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/input-clear.js"></script> Input Clear --> 
 <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/range-slider.js"></script><!-- Range Slider --> 
 <script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/jquery.zoom.js"></script><!-- Zoom Effect --> 
 <script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/bookblock.js"></script><!-- Flip Slider --> 

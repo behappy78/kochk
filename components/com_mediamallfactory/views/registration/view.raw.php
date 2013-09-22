@@ -21,7 +21,7 @@ class MediaMallFactoryFrontendViewRegistration extends FactoryView
     $behaviors = array('formvalidation', 'tooltip'),
     $jtexts = array('JGLOBAL_VALIDATION_FORM_FAILED')
   	;
-   function display($tpl = null)
+   /*function display($tpl = null)
     {
         $session =& JFactory::getSession();
 	    $step = $session->get('step'); 
@@ -29,8 +29,8 @@ class MediaMallFactoryFrontendViewRegistration extends FactoryView
         if ($tpl == null)
             $tpl = $step;
         $tpl = $step;
-        $this->setLayout('buttons');
+        //$this->setLayout('buttons');
         parent::display();
         echo '</div>';
-    }  	
+    } */ 	
 }
