@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<form>
+  <fieldset name="details">
+    <field name="id" type="text" readonly="true" class="readonly" />
+    <field name="title" type="text" required="true" />
+	<field name="currency" type="MediaMallFactoryCurrency" required="true" />
+	<field name="countries" type="MediaMallFactoryCountryGroup" required="true" />
+    <field name="published" type="switch" default="1" />    
+  </fieldset>
+</form>
