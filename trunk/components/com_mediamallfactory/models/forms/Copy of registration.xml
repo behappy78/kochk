@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<form>
+
+  <fieldset name="config">
+    <field name="maxSteps" type="hidden" default ="5"/>
+  </fieldset>
+  
+  <fieldset name="1">
+    <fields name="params">
+      <field name="pack"
+            type="sql"
+            id="pack"
+            description="COM_MEDIAMALLFACTORY_FORM_REGISTER_PACK_DESC"
+            filter="string"
+            label="COM_MEDIAMALLFACTORY_PACK"
+            message="COM_MEDIAMALLFACTORY_FORM_REGISTER_PACK_MESSAGE"
+            query="SELECT id as value, title as pack FROM #__mediamallfactory_packs ORDER by value"
+	  />
+	 <field name="first_name" type="text" class="required validate-email" title="Email" /> 
+    </fields>
+  </fieldset>
+  
+  <fieldset name="2">
+    <field name="review_id" type="MediaMallFactoryList" default="0">
+      <option value="0">COM_MEDIAMALLFACTORY_FORM_PROFILE_REVIEW_ID_OPTION_USERNAME</option>
+      <option value="1">COM_MEDIAMALLFACTORY_FORM_PROFILE_REVIEW_ID_OPTION_NAME</option>
+    </field>
+
+    <field name="list_limit" type="list" default="10">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="20">20</option>
+    </field>
+
+    <field name="media_list_limit" type="list" default="10">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="20">20</option>
+    </field>
+
+    <fields name="params">
+      <field name="first_name" type="text" />
+      <field name="last_name" type="text" />
+      <field name="address" type="text" />
+      <field name="city" type="text" />
+      <field name="country"
+            type="sql"
+            id="country"
+            description="COM_MEDIAMALLFACTORY_FORM_PROFILE_COUNTRY_DESC"
+            filter="string"
+            label="COM_MEDIAMALLFACTORY_FORM_PROFILE_COUNTRY"
+            message="COM_MEDIAMALLFACTORY_FORM_PROFILE_COUNTRY_MESSAGE"
+            query="SELECT iso3 as value, fr as country FROM #__countries ORDER by country"
+	  />
+
+      <fields name="notifications">
+        <field name="user_invoice_issued" type="switch" default="0" />
+      </fields>
+
+    </fields>
+  </fieldset>
+
+  <fieldset name="3">
+    <fields name="params">
+      <field name="pack"
+            type="sql"
+            id="pack"
+            description="3"
+            filter="string"
+            label="3"
+            message="3"
+            query="SELECT id as value, title as pack FROM #__mediamallfactory_payment_gateways ORDER by value"
+	  />
+    </fields>
+    
+  </fieldset>
+  
+    <fieldset name="4">
+    <fields name="params">
+      <field name="pack"
+            type="sql"
+            id="pack"
+            description="4"
+            filter="string"
+            label="4"
+            message="3"
+            query="SELECT id as value, title as pack FROM #__mediamallfactory_payment_gateways ORDER by value"
+	  />   
+    </fields>
+  </fieldset>
+</form>
