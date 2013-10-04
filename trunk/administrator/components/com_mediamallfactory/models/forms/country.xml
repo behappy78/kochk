@@ -3,16 +3,16 @@
 <form>
   <fieldset name="details">
     <field name="id" type="text" readonly="true" class="readonly" />
-	<field name="currency" type="text" required="true" />
-	<field name="iso4217" type="text" required="true" />
-	<field name="currency_symbol" type="text" required="true" />
-    <field name="currency_format" type="text"  required="false" />
     <field name="fr" type="text" required="true" />
     <field name="en" type="text" required="true" />
     <field name="iso" type="text" required="true" />
     <field name="iso3" type="text" required="true" />
     <field name="phone_code" type="text" required="false" />
     <field name="numcode" type="text" required="false" />
+	<field name="currency" type="text" required="true" />
+	<field name="iso4217" type="text" required="true" />
+    <field name="currency_symbol" type="text" required="true" />
+    <field name="currency_format" type="text"  required="false" />
     <field name="hits" type="text" default="0" required="false" />
     <field name="published" type="switch" default="1" />    
   </fieldset>

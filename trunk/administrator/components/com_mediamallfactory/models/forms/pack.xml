@@ -4,6 +4,8 @@
   <fieldset name="details">
     <field name="id" type="text" readonly="true" class="readonly" />
     <field name="title" type="text" required="true" />
+    <field name="country" type="MediaMallFactoryCountry" required="true" />
+    <field name="country_group" type="MediaMallFactoryCountryGroupSelect" required="true" />
     <field name="currency" type="MediaMallFactoryCurrency" required="true" />
     <field name="cost" type="text" required="true" />
     <field name="credits" type="text"  required="true" />

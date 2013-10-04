@@ -12,14 +12,12 @@ com_mediamallfactory - Media Mall Factory 3.3.5
 
 defined('_JEXEC') or die;
 
-jimport('joomla.application.component.controller');
-
-class MediaMallFactoryFrontendController extends JController
+class MediaMallFactoryBackendViewCountry extends FactoryView
 {
-  protected $default_view = 'list';
-  function __construct($config)
-  {
-        parent::__construct($config);   
-  }
-  
+  protected
+    $buttons = array('apply', 'save', 'close'),
+    $get = array('state', 'item', 'form'),
+    $css = array('edit', 'views/edit', 'admin/edit'),
+    $behaviors = array('tooltip', 'formvalidation')
+  ;
 }

@@ -95,7 +95,12 @@ class MediaMallFactoryFrontendModelEditProfile extends JModel
       $results = $db->loadObjectList();
       //echo $country;
       if ($results) {
-          $data->params['country'] = $results[0]->fr;
+          $jinput = JFactory::getApplication()->input;
+          $view = $jinput->get->get('view', 'editprofile');
+          if ($view != 'editprofile')
+              $data->params['country'] = $results[0]->fr;
+//          else
+  //            $data->params['country'] = $results[0]->fr; 
       }      
     }
 

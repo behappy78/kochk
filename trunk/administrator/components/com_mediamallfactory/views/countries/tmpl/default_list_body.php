@@ -18,28 +18,32 @@ defined('_JEXEC') or die; ?>
   </td>
 
   <td>
-    <a href="<?php echo FactoryRoute::view('pack&id=' . $this->item->id); ?>"><?php echo $this->item->title; ?></a>
+    <a href="<?php echo FactoryRoute::view('country&id=' . $this->item->id); ?>"><?php echo $this->item->fr; ?></a>
 	</td>
-  <td class="center">
-    <?php echo $this->item->countryf; ?>
-  </td>
-  <td class="center">
-    <?php echo $this->item->cgroup; ?>
-  </td>  
-  <td class="center">
-    <?php echo $this->item->currc; ?>
-  </td>
 
-  <td>
-    <?php echo $this->item->cost; ?>
-  </td>
-  <td>
-    <?php echo $this->item->credits; ?>
-  </td>
-  <td>
-    <?php echo $this->item->validity; ?>
-  </td>  
   <td class="center">
-    <?php echo JHtml::_('jgrid.published', $this->item->published, $this->i, 'packs.'); ?>
+    <?php echo $this->item->en; ?>
+  </td>
+  <td>
+    <?php echo $this->item->iso; ?>
+  </td>
+  <td>
+    <?php echo $this->item->iso3; ?>
+  </td>
+  <td>
+    <?php echo $this->item->phone_code; ?>
+  </td> 
+  <td>
+    <?php echo $this->item->numcode; ?>
+  </td>
+  <td>
+    <?php echo $this->item->currency; ?>
+  </td>      
+  <td>
+    <?php echo $this->item->hits; ?>
+  </td>  
+
+  <td class="center">
+    <?php echo JHtml::_('jgrid.published', $this->item->published, $this->i, 'countries.'); ?>
   </td>
 </tr>

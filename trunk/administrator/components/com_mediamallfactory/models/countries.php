@@ -12,20 +12,16 @@ com_mediamallfactory - Media Mall Factory 3.3.5
 
 defined('_JEXEC') or die;
 
-class MediaMallFactoryBackendModelPacks extends FactoryModelAdminList
+class MediaMallFactoryBackendModelCountries extends FactoryModelAdminList
 {
   protected $filters      = array('search', 'published');
-  protected $default_sort = array('id', 'asc');
+  protected $default_sort = array('hits', 'asc');
 
   protected function getQuery()
   {
     $query = parent::getQuery();
-    // Select pack.
-    $query->select('t.*, c.currency AS currc, c1.fr AS countryf, g.title AS cgroup')
-      ->from('#__mediamallfactory_packs AS t')
-      ->join('INNER', '#__countries AS c ON t.currency=c.id')
-      ->join('INNER', '#__countries AS c1 ON t.country=c1.iso3')
-      ->join('INNER', '#__mediamallfactory_groups AS g ON t.country_group=g.id');
+    $query->select('t.*')
+      ->from('#__countries AS t');
       return $query;
   }
 
@@ -35,7 +31,7 @@ class MediaMallFactoryBackendModelPacks extends FactoryModelAdminList
 
     if ('' != $filter) {
       $filter = $query->quote('%' . $filter . '%');
-      $query->where('(t.title LIKE '.$filter.')');
+      $query->where('(t.fr LIKE '.$filter.') OR t.en LIKE '.$filter.')');
     }
   }
 

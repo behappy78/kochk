@@ -18,56 +18,364 @@ class MediaMallFactoryFrontendModelRegistration extends JModel
 {
   protected $form_name = 'registration';
   public function __construct($config){
-      
+    $session = JFactory::getSession();
     $user = JFactory::getUser();
     if (!$user->guest)
     {
         $app=JFactory::getApplication();
         $url=JRoute::_(JURI::base()."index.php?option=com_mediamallfactory&view=list");
-        $app->redirect($url, "U R Already a member");
+        $id = $user->id;
+        $db =& JFactory::getDBO();
+        $query = $db->getQuery(true);
+        $query->select('*');
+        $query->from('#__mediamallfactory_profiles'); 
+        $query->where('user_id ='.(int)$id);
+        $query->where('profiled = 1');  
+        $db->setQuery($query);
+        $results = $db->loadObjectList();
+        if (!$results) {
+            $app=JFactory::getApplication();
+            $session->set('step', 3);
+            $session->set('stepD', $session->get('step'));
+            
+            //$app->redirect($url, "Please Complete your profile to continue");
+        }                  
+        else 
+            $app->redirect($url, "U R Already a member");
     }
-  
-    $data    = JRequest::get( 'post' );
-    if ($data){
-        //if (!JSession::checkToken()) jexit(JText::_('JINVALID_TOKEN'));
-        //print_r($data);
-        $step_todo = (int)$data['step'];
-        
-        $session =& JFactory::getSession();
-        
-        $step = $session->get('step');
-        
-        $maxSteps = (int)$session->get('maxSteps_');
-        //echo $maxSteps;
-        //die();
-        $formulaire = $data;
-        
+        $jinput = JFactory::getApplication()->input;
+
         /*
-         * @author Feki Hichem
-         * Description Save the data to temp until it finishes entering all Datas 
+         * check the session state if it's new, restart form
          */
-        if ($step < 1)
-            $step = 1;
-            //echo "todo: ".$step_todo;
-        switch ($step_todo) {
-            case 1: if ($step < $maxSteps)
-                    $step ++;
-            break;
-            case 2:
-                if ($step > 1) 
-                    $step --;
-            echo $step; 
-            break;
-            case 0:
-                    $session->clear('step');
-                    return false;
-            break;
-        }
-        $session->set("step", $step);  
-       }
+        
+        $format = $jinput->get->get('format', 'html');
+        $view = $jinput->get->get('view', '');
+        $ccode = $jinput->get->get('cf', '');
+        
+        if ($format == 'html' && $user->guest)
+        {
+            if ($session->has('step'))
+            {
+                $session->clear('step');
+                //$session->set('step', 3);
+                //$session->set('stepD', $session->get('step'));
+                //$session->clear('stepD');
+                //$session->clear('data_1');
+                //$session->clear('data_2');
+                //$session->clear('data_3');
+                //$session->clear('data_4');
+                //$session->clear('data_5');
+            }
+            if ($ccode != '') 
+            {
+                $db = JFactory::getDBO();
+                $query = $db->getQuery(true);
+                $query->select('params');
+                $query->from('#__users'); 
+                $query->where('params LIKE '.$db->quote('%'.$ccode.'%'));
+                $db->setQuery($query);
+                
+                $results = $db->loadObjectList();
+                //echo $query;
+                if ($results) {
+                    
+                    $res = json_decode($results[0]->params);
+                    $confcode = $res->code;
+                    $query = $db->getQuery(true);
+                    $query->update('#__users');
+                    $query->set(array($db->quoteName('params') . '='.$db->quote('{}'))); 
+                    $query->where('params LIKE '.$db->quote('%'.$confcode.'%'));
+                    
+                    $db->setQuery($query);
+                    $result = $db->query();
+                    if (!$result)
+                        throw new Exception("Could not update user. Error: ");
+                    else 
+                        $verif = true;
+
+                    $session->set('step', 3);
+                    $session->set('stepD', $session->get('step'));
+                }
+                else 
+                {
+                    $confcode = '';
+                    $this->printMessage('Confirmation code: is wrong');
+                } 
+            }
+      }
+        else 
+        {
+          if($view != 'ajax')
+          {
+              $data    = JRequest::get( 'post' );
+              $step = (int)$session->get('step');
+              $data    = JRequest::get( 'post' );
+                if ($data){
+                    //if (!JSession::checkToken()) jexit(JText::_('JINVALID_TOKEN'));
+                    //print_r($data);
+                    $step_todo = (int)$data['step'];
+                    
+                    $session = JFactory::getSession();
+                    
+                    $step = $session->get('step');
+                    $stepD = $session->get('stepD');
+                    
+                    $maxSteps = (int)$session->get('maxSteps_');
+                    //echo $maxSteps;
+                    //die();
+                    $formulaire = $data;
+                    
+                    /*
+                     * @author Feki Hichem
+                     * Description Save the data to temp until it finishes entering all Datas 
+                     */
+                    //if ($step < 1)
+                      //  $step = 1;
+                        $session->set('data_'.$step, $data);
+                        echo "todo: ".$step_todo;
+                    switch ($step_todo) {
+                        case 1: if ($step < $maxSteps)
+                            {
+                            /*
+                             * verification des données ici
+                             */
+                                $verif = true;
+                                switch ($step) {
+                                    case 1:
+                                        $verif = !$this->verifLogin($data['loginId']);
+                                        $verif = !$this->verifEmail($data['inputEmail'], $data['confirmEmail']) && $verif;
+                                        $verif = $this->verifPassword($data['Password'], $data['confPassword'], $data['loginId'], $data['inputEmail']) && $verif;
+                                        if ($verif)
+                                        {
+                                            $code = $this->sendEmail($data);
+                                            $cruser = $this->creatUser($data['loginId'], $data['loginId'], $data['Password'], $data['inputEmail'], $code);
+                                            if ($cruser[0])
+                                            {
+                                                $session->set('stepD', $step + 1);
+                                            }
+                                            else 
+                                                throw new Exception("Could not creat user. Error: " . $cruser[1]);
+                                        }
+                                    break;
+                                    case 2: 
+                                        if ($session->has("confcode"))
+                                            $confcode = $session->get("confcode");
+                                        else 
+                                        {
+                                            $db = JFactory::getDBO();
+                                            $query = $db->getQuery(true);
+                                            $query->select('params');
+                                            $query->from('#__users'); 
+                                            $query->where('params LIKE '.$db->quote($data['verifVcode']));
+                                            $db->setQuery($query);
+                                            
+                                            $results = $db->loadObjectList();
+                                            //echo $query;
+                                            if ($results) {
+                                                print_r($results[0]);
+                                                die();
+                                                $confcode = $results[0];
+                                            }
+                                            else 
+                                                $verif = false; 
+                                        }
+                                        
+                                        $verif = true;
+                                        $query = $db->getQuery(true);
+                                        $query->update('#__users');
+                                        $query->set(array($db->quoteName('params') . '='.$db->quote('{}'))); 
+                                        $query->where('params LIKE '.$db->quote('%'.$confcode.'%'));
+                                        
+                                        $db->setQuery($query);
+                                        $result = $db->query();
+                                        if (!$result)
+                                            throw new Exception("Could not update user. Error: ");
+                                        else 
+                                            $verif = true;
+                                            
+                                    break;
+                                    default:
+                                        ;
+                                    break;
+                                }
+                                echo 'step: '.$step;
+                                if ($verif)
+                                    $step ++;
+                                $session->set("step", $step);
+                            }
+                            else {
+                                echo "akbar min max";
+                                die();
+                            }
+                        break;
+                        case 2:
+                            if ($step > $stepD) 
+                                $step --;
+                                $session->set("step", $step);
+                        break;
+                        case 3:
+                            /*
+                             * TODO: saving data
+                             * FIXME: Test
+                             */
+                        break;            
+                        case 0:
+                                $session->clear('step');
+                                //$session->clear('stepD');
+                                //$session->clear('data_1');
+                                //$session->clear('data_2');
+                                //$session->clear('data_3');
+                                //$session->clear('data_4');
+                                //$session->clear('data_5');                    
+                                return false;
+                        break;
+                    }
+                      
+                   }              
+              
+              //die();
+          }             
+        }  
     //echo '<div id="kochkmain">';   
     parent::__construct($config);  
        
+    }
+    public function printMessage($message)
+    {
+        echo'
+        <section class="s-holder"><div class="alert alert-error"><button data-dismiss="alert" class="close" type="button">×</button><strong>Error</strong>
+        	<ul>
+        		<li>'.$message.'</li>
+        	</ul></div></section>';
+    }
+    private function creatUser($name, $username, $password, $email, $code)
+    {
+        jimport('joomla.user.helper');
+        $salt   = JUserHelper::genRandomPassword(32);
+        $crypted  = JUserHelper::getCryptedPassword($password, $salt);
+        $cpassword = $crypted.':'.$salt;
+        
+        $data = array(
+          "name"=>$name,
+          "username"=>$username,
+          "password"=>$password,
+          "password2"=>$password,
+          "email"=>$email,
+          "block"=>0,
+          "params"=>array("code"=>$code),
+          "groups"=>array("1","2")
+          
+        );
+        
+        $user = new JUser;
+        //Write to database
+        if(!$user->bind($data)) {
+            return array (false, $user->getError());
+          //throw new Exception("Could not bind data. Error: " . $user->getError());
+        }
+        if (!$user->save()) {
+            return array (false, $user->getError());
+            //throw new Exception("Could not save user. Error: " . $user->getError());
+        }        
+        return array (true);
+    }
+    private function sendEmail($data)
+    {
+        //die();
+        $session = JFactory::getSession();
+        $confcode = uniqid();
+        $session->set('confcode', $confcode);
+        $this->printMessage('Confirmation code: '.$confcode);
+        $mailer = JFactory::getMailer();
+        $sender = array( 
+            'feki.hichem@gmail.com',
+            'Kochk' );
+        $mailer->setSender($sender);
+        $recipient = $data['inputEmail'];
+        $mailer->addRecipient($recipient);
+        $body   = '<h2>Confirmation email</h2>'
+            . '<div>Confirmation code: '.$confcode
+            . '<img src="cid:logo_id" alt="logo"/></div>';
+        $mailer->isHTML(true);
+        $mailer->Encoding = 'base64';
+        $mailer->setBody($body);
+        // Optionally add embedded image
+        $mailer->AddEmbeddedImage( JPATH_COMPONENT.'/assets/logo128.jpg', 'logo_id', 'logo.jpg', 'base64', 'image/jpeg' );
+        /*$send = $mailer->Send();
+        if ( $send !== true ) {
+            echo 'Error sending email: ' . $send->get('message');
+        } else {
+            echo 'Mail sent'.$recipient.' '.$body;
+        }*/
+        return $confcode;
+    }
+    private function verifLogin($fields)
+  {
+    $db = JFactory::getDBO();
+    $query = $db->getQuery(true);
+    $query->select('id');
+    $query->from('#__users'); 
+    $query->where('username ='.$db->quote($fields));
+    $db->setQuery($query);
+    
+    $results = $db->loadObjectList();
+    //echo $query;
+    if ($results) {
+        echo 'Username exists';
+        return true;
+    }
+    else 
+        return false;
+      
+  }
+  private function verifPassword($fields, $conf, $name, $email)
+  {
+     $vl = preg_match('/^[- a-z0-9,<>()&\%$#!~`]{5,40}$/i', $fields) ? true : false;
+      if (!$vl) {
+          $this->printMessage('Your password contains invalid caraceters.');
+          return false;
+      }
+      if (is_numeric($fields)) {
+          $this->printMessage('Your password cannot be all numbers.');
+          return false;
+        
+      } elseif (strlen(count_chars($fields, 3)) < 4) {
+          $this->printMessage('Your password needs to have a variety of different characters.');
+          return false;
+        
+      }
+    
+      // levenshtein distance test (test similarity to common passwords)
+      $badPasswords = array($name, $email, 'password', 'password1', 'password123', '1234abcd', 'abcd1234', '12345678', '1234567890');
+    
+      foreach($badPasswords as $bad) {
+        if (levenshtein($fields, $bad) < 6) {
+              $this->printMessage('Your password is too similar to your name or email address or other common passwords.');
+              return false;
+        }
+      }
+    
+     if($fields === $conf)
+         return true; 
+     return true;
+      
+  }
+  private function verifEmail($fields, $conf)
+    {
+        $db = JFactory::getDBO();
+        $query = $db->getQuery(true);
+        $query->select('id');
+        $query->from('#__users'); 
+        $query->where('email ='.$db->quote($fields));
+        $db->setQuery($query);
+        
+        $results = $db->loadObjectList();
+        //echo $query;
+        if ($results) {
+            return true;
+        }
+        return $fields != $conf;
     }
   public function getForm($loadData = true)
   {
@@ -81,13 +389,14 @@ class MediaMallFactoryFrontendModelRegistration extends JModel
       $data = array();
     }
 
-    $session =& JFactory::getSession();
+    $session = JFactory::getSession();
 	if($session->has('step'))
     {
         $step = $session->get('step');
     }
     else {
         $step = 1;
+        $session->set("stepD", $step);
     }
     $session->set("step", $step);
     $config = $form->getFieldsset('config');
@@ -156,8 +465,8 @@ class MediaMallFactoryFrontendModelRegistration extends JModel
 	   /*
        * Get the country name from the code
        */
-      $country = $data->params['country'];
-      $db =& JFactory::getDBO();
+      /*$country = $data->params['country'];
+      $db = JFactory::getDBO();
       $query = $db->getQuery(true);
       $query->select('fr');
       $query->from('#__countries'); 
@@ -170,7 +479,7 @@ class MediaMallFactoryFrontendModelRegistration extends JModel
       //echo $country;
       if ($results) {
           $data->params['country'] = $results[0]->fr;
-      }      
+      }*/      
     }
 
     return $data;
