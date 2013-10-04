@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 /**------------------------------------------------------------------------
 com_mediamallfactory - Media Mall Factory 3.3.5 
@@ -10,16 +10,15 @@ com_mediamallfactory - Media Mall Factory 3.3.5
  * Technical Support: Forum - http://www.thefactory.ro/joomla-forum/
 -------------------------------------------------------------------------*/
 
-defined('_JEXEC') or die;
+defined('_JEXEC') or die; ?>
 
-jimport('joomla.application.component.controller');
+<div class="factory-view view-edit factory-view-edit">
+  <form action="" method="post" id="adminForm" name="adminForm" class="form-validate" enctype="multipart/form-data">
+    <div class="width-60 fltlft">
+      <?php echo $this->form->render(); ?>
+    </div>
 
-class MediaMallFactoryFrontendController extends JController
-{
-  protected $default_view = 'list';
-  function __construct($config)
-  {
-        parent::__construct($config);   
-  }
-  
-}
+    <input type="hidden" name="task" />
+  </form>
+</div>
+

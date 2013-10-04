@@ -18,7 +18,21 @@ switch ($source) {
     break;
     case 'login':
         verifLogin($fields, $db);
-    break;    
+    break; 
+    case 'mailcode':
+        verifCode($fields, $db);
+    break;   
+    
+    case 'reset':
+        $session =& JFactory::getSession();
+        $session->clear('step');
+        $session->clear('stepD');
+        $session->clear('data_1');
+        $session->clear('data_2');
+        $session->clear('data_3');
+        $session->clear('data_4');
+        $session->clear('data_5');          
+    break;
     default:
         ;
     break;
@@ -58,5 +72,26 @@ function verifLogin($fields, $db)
     }
     else 
         echo '0';
+}
+
+function verifCode($fields, $db)
+{
+    $session =& JFactory::getSession();
+    /*
+    $query = $db->getQuery(true);
+    $query->select('id');
+    $query->from('#__users'); 
+    $query->where('username ='.$db->quote($fields));
+    $db->setQuery($query);
+    
+    $results = $db->loadObjectList();
+    //echo $query;*/
+    $confcode = $session->get('confcode');
+    if ($confcode ==  $fields) {
+        echo '0';
+      //echo $results[0]->id;
+    }
+    else 
+         echo '1';
 }
 ?>

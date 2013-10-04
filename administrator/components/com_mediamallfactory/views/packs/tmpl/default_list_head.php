@@ -20,7 +20,12 @@ defined('_JEXEC') or die; ?>
 	<th>
     <?php echo JHtml::_('FactoryAdmin.sort', 'packs_list_title', 'title', $this->state); ?>
 	</th>
-
+  <th width="8%">
+    <?php echo JHtml::_('FactoryAdmin.sort', 'packs_list_country', 'country', $this->state); ?>
+	</th>
+  <th width="8%">
+    <?php echo JHtml::_('FactoryAdmin.sort', 'packs_list_country_group', 'country_group', $this->state); ?>
+	</th>	
   <th width="8%">
     <?php echo JHtml::_('FactoryAdmin.sort', 'packs_list_currency', 'currency', $this->state); ?>
 	</th>

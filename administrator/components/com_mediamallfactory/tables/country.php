@@ -12,14 +12,20 @@ com_mediamallfactory - Media Mall Factory 3.3.5
 
 defined('_JEXEC') or die;
 
-jimport('joomla.application.component.controller');
-
-class MediaMallFactoryFrontendController extends JController
+class MediaMallFactoryTableCountry extends FactoryTable
 {
-  protected $default_view = 'list';
-  function __construct($config)
+  public function __construct(&$db)
   {
-        parent::__construct($config);   
+    parent::__construct('#__countries', 'id', $db);
   }
-  
+
+  public function getViews()
+  {
+    $unlimited = FactoryApplication::getInstance()->getParam('general.global.unlimited_views', 0);
+    if ($unlimited) {
+      return 0;
+    }
+
+    return $this->views;
+  }
 }

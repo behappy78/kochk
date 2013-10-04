@@ -24,7 +24,7 @@ class plgUserKochk_Plg extends JPlugin
             $results = $db->loadObjectList();
             if (!$results) {
                 $app=JFactory::getApplication();
-                $url=JRoute::_(JURI::base()."index.php?option=com_mediamallfactory&view=editprofile");
+                $url=JRoute::_(JURI::base()."index.php?option=com_mediamallfactory&view=registration");
                 $app->redirect($url, "Please Complete your profile to continue");
                 return false;
             }                  

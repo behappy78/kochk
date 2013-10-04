@@ -3,7 +3,7 @@
 <form>
 
   <fieldset name="config">
-    <field name="maxSteps" type="hidden" default ="5"/>
+    <field name="maxSteps" type="hidden" default ="4"/>
   </fieldset>
   
 </form>

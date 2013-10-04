@@ -26,6 +26,7 @@
       <field name="last_name" type="text" />
       <field name="address" type="text" />
       <field name="city" type="text" />
+      <field name="zip" type="text" />
       <field name="country"
             type="sql"
             id="country"
@@ -35,7 +36,9 @@
             message="COM_MEDIAMALLFACTORY_FORM_PROFILE_COUNTRY_MESSAGE"
             query="SELECT iso3 as value, fr as country FROM #__countries ORDER by country"
 	  />
-
+      <field name="timezone" type="text" />
+      <field name="phone" type="text" />
+      <field name="fax" type="text" />
       <fields name="notifications">
         <field name="user_invoice_issued" type="switch" default="0" />
       </fields>
