@@ -12,7 +12,8 @@ com_mediamallfactory - Media Mall Factory 3.3.5
 
 defined('_JEXEC') or die; 
 $session = JFactory::getSession();
-$step = $session->get('step'); 
+$step = $session->get('step');
+$stepD = $session->get('stepD'); 
 $maxSteps = (int)$session->get('maxSteps_');
 $data = $session->get('data_'.$step);
 $data3 = $session->get('data_3');
@@ -63,7 +64,7 @@ $data3 = $session->get('data_3');
                                     <?php if ($step >= 1 && $step < $maxSteps){?>
                                       <input class="more-btn" id="next" name="next" type="button" onclick="submitFormK(1);" value="<?php echo FactoryText::_('profile_button_next'); ?>" />
                                     <?php }?>
-                                    <?php if ($step > 1){?>
+                                    <?php if ($step > 1 && $step>$stepD){?>
                                       <input class="more-btn" id="previous" name="previous" type="button" onclick="submitFormK(2);" value="<?php echo FactoryText::_('profile_button_previous'); ?>" />
                                     <?php }
                                     
@@ -72,7 +73,6 @@ $data3 = $session->get('data_3');
                                     <?php if ($step == $maxSteps){
                                     
                                         ?>   
-                                             
                                 	  <input class="more-btn" id="save" name="save" type="button" onclick="submitFormK(3);" value="<?php echo FactoryText::_('profile_button_apply'); ?>" />
                                 	<?php } ?>
                                 </div>

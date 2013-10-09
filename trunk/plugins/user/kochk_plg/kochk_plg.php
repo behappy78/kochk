@@ -5,18 +5,18 @@ class plgUserKochk_Plg extends JPlugin
 	function onUserLogin($user, $options=array()){
 	    $origpage = "redirected";
         $app=JFactory::getApplication();	    
-	    $uri = &JURI::getInstance();
+	    $uri = JURI::getInstance();
         $myabsoluteurl = $uri->toString(array('path'));
         if (JFactory::getApplication()->isSite())
         {
             $user = JFactory::getUser();
             $id = $user->id;
-            $db =& JFactory::getDBO();
+            $db = JFactory::getDBO();
             $query = $db->getQuery(true);
             $query->select('*');
             $query->from('#__mediamallfactory_profiles'); 
             $query->where('user_id ='.(int)$id);
-            $query->where('profiled = 1');  
+            //$query->where('profiled = 1');  
             $db->setQuery($query);
             if ($db->getErrorNum()) {
               echo $db->getErrorMsg();
@@ -25,10 +25,25 @@ class plgUserKochk_Plg extends JPlugin
             if (!$results) {
                 $app=JFactory::getApplication();
                 $url=JRoute::_(JURI::base()."index.php?option=com_mediamallfactory&view=registration");
-                $app->redirect($url, "Please Complete your profile to continue");
+                $app->redirect($url, "Please Complete your profile to continue");                                
                 return false;
             }                  
-        
+            else
+            {
+                //print_r($results);
+                if ($results[0]->profiled == 1)
+                {
+                    $app=JFactory::getApplication();
+                    $url=JRoute::_(JURI::base()."index.php?option=com_mediamallfactory&view=registration");
+                    $app->redirect($url, "Veuillez acheter un pack");
+                }
+                else 
+                {
+                    $app=JFactory::getApplication();
+                    $url=JRoute::_(JURI::base()."index.php?option=com_mediamallfactory&view=registration");
+                    $app->redirect($url);
+                }         
+            }
     	    $session =& JFactory::getSession();
         	if($session->has('origpage'))
             {

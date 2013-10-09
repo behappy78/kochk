@@ -18,10 +18,10 @@ defined('_JEXEC') or die; ?>
   <?php echo $this->loadTemplate('form', array('form' => $this->form, 'fieldset' => $this->fieldset)); ?>
 
   <div class="buttons">
-    <a href="<?php echo FactoryRoute::view('editprofile'); ?>" class="factory-button-text button-user-edit"><?php echo FactoryText::_('profile_edit_profile'); ?></a>
-    <a href="<?php echo FactoryRoute::view('historypurchases'); ?>" class="factory-button-text button-history"><?php echo FactoryText::_('profile_purchases_history'); ?></a><?php echo JHtml::_('MediaMallFactoryProfile.unread', $this->unread, 'purchases'); ?>
+  	<a href="<?php echo FactoryRoute::view('editparameters'); ?>" class="factory-button-text button-user-edit"><?php echo FactoryText::_('profile_edit_parameters'); ?></a>
+    <a href="<?php echo FactoryRoute::view('historypurchases'); ?>" class="factory-button-text button-history"><?php echo FactoryText::_('profile_purchases_history'); ?></a><?php echo JHtml::_('MediaMallFactoryParameters.unread', $this->unread, 'purchases'); ?>
     <a href="<?php echo FactoryRoute::view('invoices'); ?>" class="factory-button-text button-history"><?php echo FactoryText::_('profile_invoices'); ?></a>
-    <a href="<?php echo FactoryRoute::view('contactsuser'); ?>" class="factory-button-text button-history"><?php echo FactoryText::_('profile_user_contacts'); ?></a><?php echo JHtml::_('MediaMallFactoryProfile.unread', $this->unread, 'contactsUser'); ?>
-    <a href="<?php echo FactoryRoute::view('dashboard'); ?>" class="factory-button-text button-history"><?php echo FactoryText::_('profile_back'); ?></a>
+    <a href="<?php echo FactoryRoute::view('contactsuser'); ?>" class="factory-button-text button-history"><?php echo FactoryText::_('profile_user_contacts'); ?></a><?php echo JHtml::_('MediaMallFactoryParameters.unread', $this->unread, 'contactsUser'); ?>
+    <a href="<?php echo FactoryRoute::view('dashboard'); ?>" class="factory-button-text button-history"><?php echo FactoryText::_('profile_cancel'); ?></a>
   </div>
 </fieldset>
