@@ -15,6 +15,10 @@ $session = JFactory::getSession();
 $step = $session->get('step');
 $stepD = $session->get('stepD');  
 $maxSteps = (int)$session->get('maxSteps_');
+
+$data1    = JRequest::get( 'post' );
+if ($data1)
+    $data = $data1;
 $data = $session->get('data_'.$step);
 ?>
 
@@ -23,15 +27,15 @@ $data = $session->get('data_'.$step);
                         <ul class="billing-form">
                             <li>   
                               <div class="control-group">
-                                <label class="control-label" for="inputFirstname">Prénom <sup>*</sup></label>
+                                <label class="control-label" for="first_name">Prénom <sup>*</sup></label>
                                 <div class="controls">
-                                  <input type="text" value="<?php echo $data['inputFirstname']; ?>" id="inputFirstname" name="inputFirstname" class="required">
+                                  <input type="text" value="<?php echo $data['first_name']; ?>" id="first_name" name="first_name" class="required">
                                 </div>
                               </div>
                               <div class="control-group">
-                                <label class="control-label" for="inputLastname">Nom <sup>*</sup></label>
+                                <label class="control-label" for="last_name">Nom <sup>*</sup></label>
                                 <div class="controls">
-                                  <input type="text" value="<?php echo $data['inputLastname']; ?>" id="inputLastname" name="inputLastname" class="required">
+                                  <input type="text" value="<?php echo $data['last_name']; ?>" id="last_name" name="last_name" class="required">
                                 </div>
                               </div>
                               
@@ -39,23 +43,23 @@ $data = $session->get('data_'.$step);
                             
                             <li>   
                               <div class="control-group">
-                                <label class="control-label" for="inputAddress">Addresse<sup>*</sup></label>
+                                <label class="control-label" for="address">Addresse<sup>*</sup></label>
                                 <div class="controls">
-                                  <input type="text" value="<?php echo $data['inputAddress']; ?>" name="inputAddress" id="inputAddress" class="required address-field">
+                                  <input type="text" value="<?php echo $data['address']; ?>" name="address" id="address" class="required address-field">
                                 </div>
                               </div>
                             </li>
                             <li>   
                               <div class="control-group">
-                                <label class="control-label" for="inputCity">Ville <sup>*</sup></label>
+                                <label class="control-label" for="city">Ville <sup>*</sup></label>
                                 <div class="controls">
-                                  <input type="text" value="<?php echo $data['inputCity']; ?>" id="inputCity" name="inputCity" class="required">
+                                  <input type="text" value="<?php echo $data['city']; ?>" id="city" name="city" class="required">
                                 </div>
                               </div>
                               <div class="control-group">
-                                <label class="control-label" for="inputZip">Code Postal/Zip <sup>*</sup></label>
+                                <label class="control-label" for="zip">Code Postal/Zip <sup>*</sup></label>
                                 <div class="controls">
-                                  <input type="text" value="<?php echo $data['inputZip']; ?>" id="inputZip" name="inputZip" class="required">
+                                  <input type="text" value="<?php echo $data['zip']; ?>" id="zip" name="zip" class="required">
                                 </div>
                               </div>
                             </li>
@@ -91,26 +95,26 @@ $data = $session->get('data_'.$step);
                                 </div>
                               </div>
                               <div class="control-group">
-                                <label class="control-label" for="jform_params_timezone">Fuseau Horaire (Optionnel)</sup></label>
+                                <label class="control-label" for="timezone">Fuseau Horaire (Optionnel)</sup></label>
                                 <div class="controls">
-                                  <select name="jform[params][timezone]" id="jform_params_timezone" class="" aria-invalid="false">
-		<option selected="selected" value="">- Valeur par Défaut -</option>
+                                  <select name="timezone" id="timezone" class="" aria-invalid="false">
+		<option selected="selected" value="0">- Valeur par Défaut -</option>
 </select>
                                 </div>
                               </div>
                             </li>
                             <li>   
                               <div class="control-group">
-                                <label class="control-label" for="inputTelephone">Téléphonne (Optionnel)</label>
+                                <label class="control-label" for="phone">Téléphonne (Optionnel)</label>
                                 <div class="controls">
-                                  <input title="Veuillez entrer un numéro valide" type="text" name="inputTelephone" id="inputTelephone" value="<?php echo $data['inputTelephone']; ?>" class="validate-digits">
+                                  <input title="Veuillez entrer un numéro valide" type="text" name="phone" id="phone" value="<?php echo $data['phone']; ?>" class="validate-digits">
                                    <strong class="red-t">* Données Requises</strong>
                                 </div>
                               </div>
                               <div class="control-group">
-                                <label class="required control-label" for="inputFax">Fax (Optionnel)</label>
+                                <label class="required control-label" for="fax">Fax (Optionnel)</label>
                                 <div class="controls">
-                                  <input type="text" id="inputFax" name="inputFax" value="<?php echo $data['inputFax']; ?>" class="validate-digits">
+                                  <input type="text" id="fax" name="fax" value="<?php echo $data['fax']; ?>" class="validate-digits">
                                  
                                 </div>
                               </div>

@@ -13,7 +13,7 @@ com_mediamallfactory - Media Mall Factory 3.3.5
 
 defined('_JEXEC') or die;
 
-class MediaMallFactoryFrontendControllerProfile extends JController
+class MediaMallFactoryFrontendControllerParameters extends JController
 {
   public function __construct($config = array())
   {
@@ -26,16 +26,16 @@ class MediaMallFactoryFrontendControllerProfile extends JController
     JSession::checkToken() or jexit(JText::_('JINVALID_TOKEN'));
 
     $app     = JFactory::getApplication();
-    $data    = JFactory::getApplication()->input->post->get('profile', array(), 'array');
-    $model   = $this->getModel('EditProfile');
+    $data    = JFactory::getApplication()->input->post->get('parameters', array(), 'array');
+    $model   = $this->getModel('EditParameters');
     $option  = FactoryApplication::getInstance()->getOption();
-    $context = $option.'.edit.profile.data';
+    $context = $option.'.edit.parameters.data';
 
     $app->setUserState($context, null);
     if ($model->save($data)) {
-      $msg = FactoryText::_('profile_save_success');
+      $msg = FactoryText::_('params_save_success');
     } else {
-      $msg = FactoryText::_('profile_save_error');
+      $msg = FactoryText::_('params_save_error');
 
       $app->setUserState($context, $data);
 
@@ -44,10 +44,10 @@ class MediaMallFactoryFrontendControllerProfile extends JController
       }
     }
 
-    $redirect = FactoryRoute::view('editprofile');
+    $redirect = FactoryRoute::view('editparameters');
 
     if ('save' == $this->getTask()) {
-      $redirect = FactoryRoute::view('profile');
+      $redirect = FactoryRoute::view('parameters');
     }
 
     $this->setRedirect($redirect, $msg);

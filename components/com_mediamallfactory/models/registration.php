@@ -30,18 +30,26 @@ class MediaMallFactoryFrontendModelRegistration extends JModel
         $query->select('*');
         $query->from('#__mediamallfactory_profiles'); 
         $query->where('user_id ='.(int)$id);
-        $query->where('profiled = 1');  
+        //$query->where('profiled = 1');  
         $db->setQuery($query);
         $results = $db->loadObjectList();
         if (!$results) {
-            $app=JFactory::getApplication();
             $session->set('step', 3);
-            $session->set('stepD', $session->get('step'));
-            
-            //$app->redirect($url, "Please Complete your profile to continue");
         }                  
         else 
-            $app->redirect($url, "U R Already a member");
+        {
+            if ($results[0]->profiled == 1)
+            {
+                $session->set('step', 4);
+            }
+            else 
+            {
+                // TODO: have to save to original link and redirect to it here
+                $session->set('step', 3);
+            }
+            //$app->redirect($url, "U R Already a member");
+        }
+        $session->set('stepD', $session->get('step'));
     }
         $jinput = JFactory::getApplication()->input;
 
@@ -133,7 +141,7 @@ class MediaMallFactoryFrontendModelRegistration extends JModel
                     //if ($step < 1)
                       //  $step = 1;
                         $session->set('data_'.$step, $data);
-                        echo "todo: ".$step_todo;
+                        //echo "todo: ".$step_todo;
                     switch ($step_todo) {
                         case 1: if ($step < $maxSteps)
                             {
@@ -195,11 +203,50 @@ class MediaMallFactoryFrontendModelRegistration extends JModel
                                             $verif = true;
                                             
                                     break;
+                                    case 3:
+                                        print_r($data);
+                                        $user = JFactory::getUser();
+                                        $infos =new stdClass();
+                                        if (!$user->guest)
+                                        {
+                                            $params = array();
+                                            $params['first_name'] = $data['first_name'];
+                                            $params['last_name'] = $data['last_name'];
+                                            $params['address'] = $data['address'];
+                                            $params['city'] = $data['city'];
+                                            $params['zip'] = $data['zip'];
+                                            $params['country'] = $data['country'];
+                                            $params['timezone'] = $data['timezone'];
+                                            $params['phone'] = $data['phone'];
+                                            $params['fax'] = $data['fax'];
+                                            $params['notifications'] = array();
+                                            $params['notifications']['user_invoice_issued'] = 0;
+                                            $infos->user_id = $user->id;
+                                            $infos->credits = 0;
+                                            $infos->balance = 0;
+                                            $infos->balance_available = 0;
+                                            $infos->revenue = 0;
+                                            $infos->review_id = 0;
+                                            $infos->allow_contact = 0;
+                                            $infos->list_limit = 10;
+                                            $infos->media_list_limit = 10;
+                                            $infos->profiled = 0;
+                                            $infos->params = json_encode($params);
+                                            print_r($params);
+                                            $db = JFactory::getDBO();
+                                            $db->insertObject( '#__mediamallfactory_profiles', $infos, user_id );                                        
+                                        }
+                                         else 
+                                         {
+                                             // not logged in
+                                             // TODO: save data later
+                                         }   
+                                    break;
                                     default:
                                         ;
                                     break;
                                 }
-                                echo 'step: '.$step;
+                                //echo 'step: '.$step;
                                 if ($verif)
                                     $step ++;
                                 $session->set("step", $step);
@@ -215,10 +262,9 @@ class MediaMallFactoryFrontendModelRegistration extends JModel
                                 $session->set("step", $step);
                         break;
                         case 3:
-                            /*
-                             * TODO: saving data
-                             * FIXME: Test
-                             */
+                            print_r($data['pack']);
+
+                             /* @TODO: saving data*/
                         break;            
                         case 0:
                                 $session->clear('step');

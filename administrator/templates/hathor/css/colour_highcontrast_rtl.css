@@ -196,7 +196,7 @@ a.saveorder.inactive {
 	background-position: left center;
 }
 
-.button2-left.off .next { /* @TODO check the x position */
+.button2-left.off .next { /* @TOD check the x position */
 	background: url(../images/j_button2_next_off.png) 100% 0 no-repeat;
 }
 
