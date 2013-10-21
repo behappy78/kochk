@@ -180,7 +180,8 @@ margin-bottom:0;
 .features-mags .bx-pager { display:none; }
 .features-mags .bx-wrapper .bx-viewport { -moz-box-shadow: 0 0 0 #fff; -webkit-box-shadow: 0 0 0 #fff; box-shadow:0 0 0 #fff; border: solid #fff 0; background: transparent; }
 .features-mags .slide { padding:18px; border:1px solid #e5e5e5; transition: width 1s; -moz-transition: 1s; /* Firefox 4 */ -webkit-transition: 1s; /* Safari and Chrome */ -o-transition: 1s; /* Opera */ }
-.features-mags .slide:hover { background:#f9f9f9; border-color:#85a319; -moz-box-shadow: 0 0 7px #ccc; -webkit-box-shadow: 0 0 7px #ccc; box-shadow: 0 0 7px #ccc; }
+.features-mags .slide {border-radius:6px;}
+.features-mags .slide:hover { background:#f9f9f9; border-color:#85a319; -moz-box-shadow: 0 0 10px #ccc; -webkit-box-shadow: 0 0 10px #ccc; box-shadow: 0 0 10px #ccc; }
 .features-mags .slide .title { display:block; margin:0 0 5px; color:#000; font-size:12px; }
 .features-mags .slide .title a { color:#000; }
 .features-mags .slide img { margin:0 0 5px; }
