@@ -108,41 +108,7 @@ $app = JFactory::getApplication();
           <!-- Start Nav Bar Module -->
           <jdoc:include type="modules" name="position-1" />
           <!-- End Nav Bar Module --> 
-          
-          <!--
-            <ul class="nav">
-              <li> <a href="grid-view.html">Books</a> </li>
-              <li> <a href="grid-view.html">NOOK Books</a></li>
-              <li><a href="grid-view.html">Textbooks</a></li>
-              <li><a href="grid-view.html">News stand</a></li>
-              <li><a href="grid-view.html">Teens</a></li>
-              <li><a href="grid-view.html">Toys & Games</a></li>
-              <li class="dropdown"> <a class="dropdown-toggle" href="grid-view.html" data-toggle="dropdown"><i class="icon-heart"></i> Features<b class="caret"></b> </a>
-                <ul class="dropdown-menu">
-                  <li><a href="about-us.html">About Us</a></li>
-                  <li><a href="blog.html">Blog</a></li>
-                  <li><a href="blog-detail.html">Blog Detail</a></li>
-                  <li><a href="grid-view.html">Product Grid View</a></li>
-                  <li><a href="list-view.html">Product List View</a></li>
-                  <li><a href="grid-view-without-side-bar.html">Product Grid View Without Side Bar</a></li>
-                  <li><a href="shortcodes.html">Short Codes</a></li>
-                  <li><a href="blog-detail.html">News</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"> <a class="dropdown-toggle" href="grid-view.html" data-toggle="dropdown">Movies & TV <b class="caret"></b> </a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Submenu Detail Column 1</a></li>
-                  <li><a href="#">Submenu Detail Column 2</a></li>
-                  <li><a href="#">Submenu Detail Column 3</a></li>
-                </ul>
-              </li>
-              <li> <a href="grid-view.html">Music</a></li>
-              <li> <a href="grid-view.html">Gift Cards</a> </li>
-              <li><a href="grid-view.html">Deals & Offers</a></li>
-            </ul>
-				 --> 
-            
+    
           </div>
           <!--/.nav-collapse --> 
         </div>

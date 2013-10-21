@@ -22,11 +22,11 @@ class MediaMallFactoryFrontendModelDashboard extends JModel
       'profile',
       'editprofile',
       'parameters',
-      '',
+      //'',
       'purchase' => array('link' => FactoryRoute::view('historypurchases')),
-      'history' ,
+      'favorite' ,
       'invoices' => array('link' => FactoryRoute::view('settings&form=invoices')),
-      '',
+      //'',
       'contacts' => array('link' => FactoryRoute::view('contactsuser'))
     );
 
@@ -42,6 +42,7 @@ class MediaMallFactoryFrontendModelDashboard extends JModel
         }
 
         $buttons[$item] = array(
+          'view'   => $key,		
           'link'   => $link,
           'image'  => $path . $key .'.png',
           'text'   => FactoryText::_('configuration_button_' . $key),
