@@ -26,7 +26,7 @@ class JFormFieldMediaMallFactoryCountryGroupSelect extends JFormFieldList
     $query->select('id, title');
     $query->from('#__mediamallfactory_groups'); 
     //$query->where('published = 1');
-    $query->order('id ASC');
+    $query->order('hits desc, id ASC');
     $db->setQuery($query);
     $results = $db->loadObjectList();
     //echo $country;

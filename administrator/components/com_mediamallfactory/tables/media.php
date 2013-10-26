@@ -287,7 +287,7 @@ class MediaMallFactoryTableMedia extends FactoryTable
     }
 
     // Check if media category is published.
-    $table = JTable::getInstance('Category');
+    $table = FactoryTable::getInstance('Category');
     $table->load($this->category_id);
     if (1 != $table->published) {
       return false;

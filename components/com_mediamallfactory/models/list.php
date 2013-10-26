@@ -102,7 +102,7 @@ class MediaMallFactoryFrontendModelList extends JModelList
 
     // Select the category.
     $query->select('c.title AS category_title')
-      ->leftJoin('#__categories c ON c.id = m.category_id')
+      ->leftJoin('#__mediamallfactory_category c ON c.id = m.category_id')
       ->where('c.published = ' . $query->quote(1));
 
     // Select the username.
@@ -198,13 +198,25 @@ class MediaMallFactoryFrontendModelList extends JModelList
 
   protected function getCategoryFilter()
   {
+    $dbo = $this->getDbo();
+    $query = $dbo->getQuery(true)
+      ->select('t.id AS value, t.title AS text')
+      ->from('#__mediamallfactory_category t')
+      ->order('t.title ASC');
+    $results = $dbo->setQuery($query)
+      ->loadObjectList();
+
+    array_unshift($results, array('value' => '', 'text' => FactoryText::_('list_filter_category_label')));
+
+    return $results;
+   /*   
     $array = array('' => FactoryText::_('list_filter_category_label'));
 
     foreach (JHtml::_('category.options', 'com_mediamallfactory') as $category) {
       $array[$category->value] = $category->text;
     }
 
-    return $array;
+    return $array;*/
   }
 
   protected function getTypeFilter()

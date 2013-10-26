@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <form>
-  <fields name="params" addfieldpath="/administrator/components/com_mediamallfactory/models/fields">
-    <fieldset name="mediamall" label="Media Mall Thumbnail">
-      <fields name="thumbnail">
-        <field name="current" type="MediaMallFactoryCategoryThumbnail" label="Current" />
-        <field name="new" type="media" label="New" />
-      </fields>
-    </fieldset>
-    <fieldset name="icountry" label="Include Countries">
-      <fields name="includecountries">
-        <field name="icountry" type="MediaMallFactoryCountry" label="Country" />
-        <field name="icountrygroup" type="MediaMallFactoryCountryGroupSelect" label="Group" />
-      </fields>
-    </fieldset> 
-	<fieldset name="ecountry" label="Exclude Countries">      
-      <fields name="excludecountries">
-        <field name="ecountry" type="MediaMallFactoryCountry" label="Country" />
-        <field name="ecountrygroup" type="MediaMallFactoryCountryGroupSelect" label="Group" />
-      </fields>      
-    </fieldset>    
-  </fields>
+	<fieldset name="details">
+	  <field name="id" readonly="true" class="readonly" />
+	  <field name="title" type="text" required="true" />
+	  <field name="parent_id" type="MediaMallFactoryCategory" level="0" excludecurrent="true" required="true" default="0" />
+	  <field name="description" type="textarea" rows="5" />
+	  <field name="thumbnail" type="media" />
+	  <field name="published" type="switch" default="1" />
+	  <field name="level" type="hidden" default="0" />
+	</fieldset>
+	<fieldset name="icountryf" label="Include Countries">
+	    <field name="icountry" type="MediaMallFactoryCountry" label="Country" default="NUL" />
+	    <field name="icountrygroup" type="MediaMallFactoryCountryGroupSelect" default="0" label="Group" />
+	</fieldset> 
+	<fieldset name="ecountryf" label="Exclude Countries">      
+	       <field name="ecountry" type="MediaMallFactoryCountry" label="Country" default="NUL"/>
+	       <field name="ecountrygroup" type="MediaMallFactoryCountryGroupSelect" default="0" label="Group" />
+	</fieldset>    
+
 </form>

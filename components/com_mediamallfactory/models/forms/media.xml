@@ -15,7 +15,7 @@
     </field>
 
     <field name="type_id" type="mediamallfactorytype" required="true" class="mediamallfactory-type" update="media" />
-    <field name="category_id" type="category" required="true" extension="com_mediamallfactory" />
+    <field name="category_id" type="MediaMallFactoryCategory" level="2" required="true" />
     <field name="user_id" type="user" required="true" adminonly="true" />
     <field name="description" type="textarea" rows="5" />
     <field name="thumbnail" type="MediaMallFactoryThumbnail" extensions="png, jpg, jpeg, gif" class="validate-extension"

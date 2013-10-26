@@ -16,6 +16,7 @@ class MediaMallFactoryBackendViewDashboard extends FactoryView
     $get = array(
       'order',
       'notifications',
+      'subscriptions',
       'latestMedia',
       'latestMediaPending',
       'latestOrders',

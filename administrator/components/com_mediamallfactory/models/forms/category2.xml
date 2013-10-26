@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fields name="params" addfieldpath="/administrator/components/com_mediamallfactory/models/fields">
+    <fieldset name="mediamall" label="Media Mall Thumbnail">
+      <fields name="thumbnail">
+        <field name="current" type="MediaMallFactoryCategoryThumbnail" label="Current" />
+        <field name="new" type="media" label="New" />
+      </fields>
+    </fieldset>
+    <fieldset name="icountry" label="Include Countries">
+      <fields name="includecountries">
+        <field name="icountry" type="MediaMallFactoryCountry" label="Country" />
+        <field name="icountrygroup" type="MediaMallFactoryCountryGroupSelect" label="Group" />
+      </fields>
+    </fieldset> 
+	<fieldset name="ecountry" label="Exclude Countries">      
+      <fields name="excludecountries">
+        <field name="ecountry" type="MediaMallFactoryCountry" label="Country" />
+        <field name="ecountrygroup" type="MediaMallFactoryCountryGroupSelect" label="Group" />
+      </fields>      
+    </fieldset>    
+  </fields>
+</form>

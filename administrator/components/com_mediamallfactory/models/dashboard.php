@@ -41,6 +41,7 @@ class MediaMallFactoryBackendModelDashboard extends JModel
 
     $panels = array(
       'notifications',
+      'subscriptions',
       'latestmedia',
       'latestmediapending',
       'latestorders',
@@ -51,6 +52,7 @@ class MediaMallFactoryBackendModelDashboard extends JModel
     $array = array(
       'first'  => array(
         'notifications',
+        'subscriptions',
       ),
       'second' => array(
         'latestmedia',
@@ -116,7 +118,25 @@ class MediaMallFactoryBackendModelDashboard extends JModel
     return $dbo->setQuery($query, 0, $this->limit)
       ->loadObjectList();
   }
+  public function getSubscriptions()
+  {
+    $dbo = $this->getDbo();
+    $query = $dbo->getQuery(true)
+      ->select('o.*')
+      ->from('#__mediamallfactory_subscriptions o')
+      ->order('o.created_at DESC');
 
+    // Select gateway.
+//    $query->select('g.id AS gateway_id, g.title AS gateway_title')
+//      ->leftJoin('#__mediamallfactory_payment_gateways g ON g.element = o.gateway');
+
+    // Select username.
+    $query->select('u.username')
+      ->leftJoin('#__users u ON u.id = o.user_id');
+
+    return $dbo->setQuery($query, 0, $this->limit)
+      ->loadObjectList();
+  }
   public function getLatestPayments()
   {
     $dbo = $this->getDbo();

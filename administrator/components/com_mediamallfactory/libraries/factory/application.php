@@ -262,6 +262,7 @@ class FactoryApplication
     JLoader::register('JHtmlFactory',       $this->getPath('factory').DS.'html.php');
     JLoader::register('JHtmlFactoryAdmin',  $this->getPath('factory').DS.'html'.DS.'admin.php');
     JLoader::register('FactoryTable',       $this->getPath('factory').DS.'table.php');
+    JLoader::register('FactoryTableNested',       $this->getPath('factory').DS.'tablenested.php');
     JLoader::register('FactoryFormFilters', $this->getPath('factory').DS.'formfilters.php');
     JLoader::register('SimpleImage',        $this->getPath('libraries').DS.'resize.php');
     JLoader::register('FactoryModelAdminList', $this->getPath('factory').DS.'modeladminlist.php');

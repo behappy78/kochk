@@ -54,6 +54,7 @@
       <menu view="list">COM_BRIEFCASEFACTORY_COMPONENT_MENU_LIST</menu>
       <menu view="users">COM_BRIEFCASEFACTORY_COMPONENT_MENU_USERS</menu>
       <menu view="orders">COM_BRIEFCASEFACTORY_COMPONENT_MENU_ORDERS</menu>
+      <menu view="subscriptions">COM_BRIEFCASEFACTORY_COMPONENT_MENU_SUBSCRIPTIONS</menu>
       <menu view="payments">COM_BRIEFCASEFACTORY_COMPONENT_MENU_PAYMENTS</menu>
       <menu view="invoices">COM_BRIEFCASEFACTORY_COMPONENT_MENU_INVOICES</menu>
       <menu view="requests">COM_BRIEFCASEFACTORY_COMPONENT_MENU_REQUESTS</menu>
