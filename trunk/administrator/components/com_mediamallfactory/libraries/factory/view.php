@@ -260,14 +260,24 @@ class FactoryView extends JView
 
   protected function setTitle()
   {
+    $name = $this->getName();
+    if ($name == 'categories' || $name == 'category')
+    {
+        $titles = array();
+        $titles[0] = $name;
+        $titles[1] = 'publishers';
+        $titles[2] = 'press';
+         $level = JFactory::getApplication()->input->get->getInt('level', 0);
+         $name = $titles[$level];
+    }
     if (isset($this->item)) {
       if ($this->item->{$this->id}) {
-        JToolBarHelper::title(FactoryText::sprintf('view_title_edit_' . $this->getName(), $this->item->{$this->title}, $this->item->{$this->id}));
+        JToolBarHelper::title(FactoryText::sprintf('view_title_edit_' . $name, $this->item->{$this->title}, $this->item->{$this->id}));
       } else {
-        JToolBarHelper::title(FactoryText::_('view_title_new_' . $this->getName()));
+        JToolBarHelper::title(FactoryText::_('view_title_new_' . $name));
       }
     } else {
-      JToolBarHelper::title(FactoryText::_('view_title_' . $this->getName()));
+      JToolBarHelper::title(FactoryText::_('view_title_' . $name));
     }
 
     return true;

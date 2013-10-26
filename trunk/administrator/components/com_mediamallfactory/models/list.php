@@ -58,7 +58,7 @@ class MediaMallFactoryBackendModelList extends FactoryModelAdminList
 
     // Select category.
     $query->select('c.title AS category_title')
-      ->leftJoin('#__categories c ON c.id = m.category_id');
+      ->leftJoin('#__mediamallfactory_category c ON c.id = m.category_id');
 
     // Select type.
     $query->select('t.title AS type_title')

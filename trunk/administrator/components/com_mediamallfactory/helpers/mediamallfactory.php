@@ -20,6 +20,7 @@ class MediaMallFactoryHelper
       'list',
       'users',
       'orders',
+      'subscriptions',
       'payments',
       'invoices',
       'requests',

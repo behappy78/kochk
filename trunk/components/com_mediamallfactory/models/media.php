@@ -123,7 +123,7 @@ class MediaMallFactoryFrontendModelMedia extends JModel
 
     $item = $this->getItem($media_id);
 
-    $table = JTable::getInstance('Category');
+    $table = FactoryTable::getInstance('Category');
     $table->load($item->category_id);
 
     return $table;

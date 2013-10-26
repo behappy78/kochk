@@ -28,7 +28,7 @@ jQuery(document).ready(function($){
 
 
 /* Start Range Slider*/
-$(function() {
+jQuery(function($) {
 		$( "#slider-range" ).slider({
 			range: true,
 			min: 0,
@@ -340,7 +340,7 @@ $.event.setupHelper( [
 		})
 });
 })(jQuery)
-$(function() {
+jQuery(function($) {
 				var Page = (function() {
 					var config = {
 						$bookBlock : $( '#bb-bookblock' ),

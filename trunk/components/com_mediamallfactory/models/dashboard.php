@@ -17,7 +17,11 @@ class MediaMallFactoryFrontendModelDashboard extends JModel
   public function getItems()
   {
     $path = JURI::root().'components/com_mediamallfactory/assets/images/dashboard/';
-
+    $user = JFactory::getUser();
+    if ($user->guest)
+    {
+        
+    }
     $items = array(
       'profile',
       'editprofile',
