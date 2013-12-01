@@ -8,7 +8,7 @@ $data = $session->get('data_'.$step);
 $data3 = $session->get('data_3');
 ?>
 
-  <div class="title-bar"> <strong>Etape 4: Sélection du Pack <sup>*</sup></strong> </div>
+  <div class="title-bar"> <strong><?php echo FactoryText::_('registration_steps_4_title');?><sup>*</sup></strong> </div>
     <div class="side-holder frombox">
                               <div class="control-group">
                                 
@@ -51,7 +51,7 @@ $data3 = $session->get('data_3');
                                       }
                                       else 
                                       {
-                                          echo "sorry no packs are available for your country for now";
+                                      	echo FactoryText::_('registration_no_packs_available_for_your_country_now');
                                       } 
                                    ?>                                       	
 

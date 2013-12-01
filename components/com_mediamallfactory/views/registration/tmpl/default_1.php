@@ -1,15 +1,4 @@
-<?php 
 
-/**------------------------------------------------------------------------
-com_mediamallfactory - Media Mall Factory 3.3.5 
-------------------------------------------------------------------------
- * @author TheFactory
- * @copyright Copyright (C) 2011 SKEPSIS Consult SRL. All Rights Reserved.
- * @license - http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * Websites: http://www.thefactory.ro
- * Technical Support: Forum - http://www.thefactory.ro/joomla-forum/
--------------------------------------------------------------------------*/
-?>
 <!-- Start Main Content -->
 <?php  
 
@@ -18,12 +7,12 @@ $step = $session->get('step');
 $maxSteps = (int)$session->get('maxSteps_');
 $data = $session->get('data_'.$step);
 ?>
-  <div class="title-bar"> <strong>Etape 1: Données d'identification:</strong> </div>
+  <div class="title-bar"> <strong><?php echo FactoryText::_('registration_steps_1_title');?></strong> </div>
     <div class="side-holder frombox">
                         <ul class="billing-form">
                             <li>
                               <div class="control-group">
-                                <label class="control-label" for="loginId">Identifiant<sup>*</sup></label>
+                                <label class="control-label" for="loginId"><?php echo FactoryText::_('registration_user_id');?><sup>*</sup></label>
                                 <div class="controls">
                                   <input title="Identifiant" type="text" value="<?php echo $data['loginId']; ?>" id="loginId" name="loginId" class="required validate-alphanum minLength:3 maxLength:30 loginUnique">
                                 </div>
@@ -32,13 +21,13 @@ $data = $session->get('data_'.$step);
                             </li>
                             <li>   
                               <div class="control-group">
-                                <label class="control-label" for="Password">Mot de passe <sup>*</sup></label>
+                                <label class="control-label" for="Password"><?php echo FactoryText::_('registration_user_pwd');?> <sup>*</sup></label>
                                 <div class="controls">
                                   <input type="password" id="Password" name="Password" class="required validate-alphanum minLength:4">
                                 </div>
                               </div>
                               <div class="control-group">
-                                <label class="control-label" for="confPassword">Confirmez Mot de passe <sup>*</sup></label>
+                                <label class="control-label" for="confPassword"><?php echo FactoryText::_('registration_user_pwd_confirm');?> <sup>*</sup></label>
                                 <div class="controls">
                                   <input type="password" id="confPassword" name="confPassword" class="required validate-match matchInput:'Password' matchName:'Password'">
                                 </div>
@@ -46,13 +35,13 @@ $data = $session->get('data_'.$step);
                             </li>
                             <li>   
                               <div class="control-group">
-                                <label class="control-label" for="inputEmail">Adresse Email <sup>*</sup></label>
+                                <label class="control-label" for="inputEmail"><?php echo FactoryText::_('registration_user_email');?> <sup>*</sup></label>
                                 <div class="controls">
                                   <input type="text" value="<?php echo $data['inputEmail']; ?>" id="inputEmail" name="inputEmail" class="required validate-email emailUnique">
                                 </div>
                               </div>
                               <div class="control-group">
-                                <label class="control-label" for="confirmEmail">Confirmez Adresse Email <sup>*</sup></label>
+                                <label class="control-label" for="confirmEmail"><?php echo FactoryText::_('registration_user_email_confirm');?> <sup>*</sup></label>
                                 <div class="controls">
                                   <input type="text" value="<?php echo $data['confirmEmail']; ?>" id="confirmEmail" name="confirmEmail" class="required validate-match matchInput:'inputEmail' matchName:'E-mail'">
                                 </div>
