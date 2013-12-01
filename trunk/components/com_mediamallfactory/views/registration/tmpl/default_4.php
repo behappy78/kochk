@@ -1,15 +1,4 @@
 <?php 
-
-/**------------------------------------------------------------------------
-com_mediamallfactory - Media Mall Factory 3.3.5 
-------------------------------------------------------------------------
- * @author TheFactory
- * @copyright Copyright (C) 2011 SKEPSIS Consult SRL. All Rights Reserved.
- * @license - http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * Websites: http://www.thefactory.ro
- * Technical Support: Forum - http://www.thefactory.ro/joomla-forum/
--------------------------------------------------------------------------*/
-
 defined('_JEXEC') or die; 
 $session = JFactory::getSession();
 $step = $session->get('step');
@@ -19,12 +8,12 @@ $data = $session->get('data_'.$step);
 $data3 = $session->get('data_3');
 ?>
 
-  <div class="title-bar"> <strong>Etape 4: Sélection du Pack</strong> </div>
+  <div class="title-bar"> <strong><?php echo FactoryText::_('registration_steps_4_title');?></strong> </div>
     <div class="side-holder frombox">
                         <ul class="billing-form">
                         	<li>
                               <div class="control-group">
-                                <label class="control-label" for="pack">Pack <sup>*</sup></label>
+                                <label class="control-label" for="pack"><?php echo FactoryText::_('registration_pack');?> Pack <sup>*</sup></label>
                                 <div class="controls">
                                   <?php 
                                       $db = JFactory::getDBO();
@@ -45,13 +34,13 @@ $data3 = $session->get('data_3');
                                       //echo $country;
                                       if ($results) {
                                           foreach ($results as $result) {
-                                              echo '<input type="radio" name="pack" value="'.$result->id.'">'. $result->title.' Cost: '.$result->cost.' '.$result->currency_symbol.'<br>';
+                                              echo '<input type="radio" name="pack" value="'.$result->id.'">'. $result->title.' '.FactoryText::_('registration_pack_cost').' Cost: '.$result->cost.' '.$result->currency_symbol.'<br>';
                                               //print_r($results);
                                           }
                                       }
                                       else 
                                       {
-                                          echo "sorry no packs are available for your country for now";
+                                      	echo FactoryText::_('registration_no_packs_available_for_your_country_now');
                                       } 
                                    ?>                                       	
                                    </select>

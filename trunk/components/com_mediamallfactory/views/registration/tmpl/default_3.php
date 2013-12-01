@@ -1,14 +1,5 @@
 <?php 
 
-/**------------------------------------------------------------------------
-com_mediamallfactory - Media Mall Factory 3.3.5 
-------------------------------------------------------------------------
- * @author TheFactory
- * @copyright Copyright (C) 2011 SKEPSIS Consult SRL. All Rights Reserved.
- * @license - http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * Websites: http://www.thefactory.ro
- * Technical Support: Forum - http://www.thefactory.ro/joomla-forum/
--------------------------------------------------------------------------*/
 
 defined('_JEXEC') or die; 
 $session = JFactory::getSession();
@@ -22,18 +13,18 @@ if ($data1)
 $data = $session->get('data_'.$step);
 ?>
 
-  <div class="title-bar"> <strong>Etape 3: Données Personnelles</strong> </div>
+  <div class="title-bar"> <strong><?php echo FactoryText::_('registration_steps_3_title');?></strong> </div>
     <div class="side-holder frombox">
                         <ul class="billing-form">
                             <li>   
                               <div class="control-group">
-                                <label class="control-label" for="first_name">Prénom <sup>*</sup></label>
+                                <label class="control-label" for="first_name"><?php echo FactoryText::_('registration_user_firstname');?> <sup>*</sup></label>
                                 <div class="controls">
                                   <input type="text" value="<?php echo $data['first_name']; ?>" id="first_name" name="first_name" class="required">
                                 </div>
                               </div>
                               <div class="control-group">
-                                <label class="control-label" for="last_name">Nom <sup>*</sup></label>
+                                <label class="control-label" for="last_name"><?php echo FactoryText::_('registration_user_lastname');?> <sup>*</sup></label>
                                 <div class="controls">
                                   <input type="text" value="<?php echo $data['last_name']; ?>" id="last_name" name="last_name" class="required">
                                 </div>
@@ -43,7 +34,7 @@ $data = $session->get('data_'.$step);
                             
                             <li>   
                               <div class="control-group">
-                                <label class="control-label" for="address">Addresse<sup>*</sup></label>
+                                <label class="control-label" for="address"><?php echo FactoryText::_('registration_user_invoice_adresse');?><sup>*</sup></label>
                                 <div class="controls">
                                   <input type="text" value="<?php echo $data['address']; ?>" name="address" id="address" class="required address-field">
                                 </div>
@@ -51,13 +42,13 @@ $data = $session->get('data_'.$step);
                             </li>
                             <li>   
                               <div class="control-group">
-                                <label class="control-label" for="city">Ville <sup>*</sup></label>
+                                <label class="control-label" for="city"><?php echo FactoryText::_('registration_user_city');?> <sup>*</sup></label>
                                 <div class="controls">
                                   <input type="text" value="<?php echo $data['city']; ?>" id="city" name="city" class="required">
                                 </div>
                               </div>
                               <div class="control-group">
-                                <label class="control-label" for="zip">Code Postal/Zip <sup>*</sup></label>
+                                <label class="control-label" for="zip"><?php echo FactoryText::_('registration_user_zipcode');?> <sup>*</sup></label>
                                 <div class="controls">
                                   <input type="text" value="<?php echo $data['zip']; ?>" id="zip" name="zip" class="required">
                                 </div>
@@ -66,7 +57,7 @@ $data = $session->get('data_'.$step);
                             <li>   
                               
                               <div class="control-group">
-                                <label class="control-label" for="country">Pays <sup>*</sup></label>
+                                <label class="control-label" for="country"><?php echo FactoryText::_('registration_user_country');?> <sup>*</sup></label>
                                 <div class="controls">
                                   <select name="country">
                                   <?php 
@@ -95,7 +86,7 @@ $data = $session->get('data_'.$step);
                                 </div>
                               </div>
                               <div class="control-group">
-                                <label class="control-label" for="timezone">Fuseau Horaire (Optionnel)</sup></label>
+                                <label class="control-label" for="timezone"><?php echo FactoryText::_('registration_user_timezone');?> <?php echo FactoryText::_('optional');?></sup></label>
                                 <div class="controls">
                                   <select name="timezone" id="timezone" class="" aria-invalid="false">
 		<option selected="selected" value="0">- Valeur par Défaut -</option>
@@ -105,14 +96,14 @@ $data = $session->get('data_'.$step);
                             </li>
                             <li>   
                               <div class="control-group">
-                                <label class="control-label" for="phone">Téléphonne (Optionnel)</label>
+                                <label class="control-label" for="phone"><?php echo FactoryText::_('registration_user_phone');?> <?php echo FactoryText::_('optional');?></label>
                                 <div class="controls">
                                   <input title="Veuillez entrer un numéro valide" type="text" name="phone" id="phone" value="<?php echo $data['phone']; ?>" class="validate-digits">
-                                   <strong class="red-t">* Données Requises</strong>
+                                   <strong class="red-t">* <?php echo FactoryText::_('Requested_data');?></strong>
                                 </div>
                               </div>
                               <div class="control-group">
-                                <label class="required control-label" for="fax">Fax (Optionnel)</label>
+                                <label class="required control-label" for="fax"><?php echo FactoryText::_('registration_user_fax');?> <?php echo FactoryText::_('optional');?></label>
                                 <div class="controls">
                                   <input type="text" id="fax" name="fax" value="<?php echo $data['fax']; ?>" class="validate-digits">
                                  

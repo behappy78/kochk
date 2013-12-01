@@ -17,8 +17,8 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
         <?php endif; ?>
         <div id="collapseOne" class="accordion-body collapse in">
           <div class="accordion-inner">
-            <div class="span6 check-method-left"> <strong class="green-t">IDENTIFICATION:</strong>
-              <p>Vous êtes déjà membre? Veuillez vous identifier:</p>
+            <div class="span6 check-method-left"> <strong class="green-t"><?php echo JText::_('TPL_KIOSK_LOGIN_FORM_TITLE'); ?>:</strong>
+              <p><?php echo JText::_('TPL_KIOSK_LOGIN_FORM_HAVE_ACCOUNT_INTRO'); ?>:</p>
               <form class="form-horizontal" action="<?php echo JRoute::_('index.php?option=com_users&task=user.login'); ?>" method="post">
               <?php
 			  $this->form->reset( true ); // to reset the form xml loaded by the view
@@ -57,8 +57,8 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
                 </fieldset>
               </form>
             </div>
-            <div class="span5 check-method-right"> <strong class="green-t">JE N'AI PAS DE COMPTE: </strong>
-              <p>L'inscription sur kochk.com vous permet d'acheter en toute sécurité des Crédits et les gérer afin de pouvoir télécharger les journaux et magazines qui vous conviennent, ainsi que de vous y abonner.</p>
+            <div class="span5 check-method-right"> <strong class="green-t"><?php echo JText::_('TPL_KIOSK_REGISTRATION_TITLE'); ?>: </strong>
+              <p><?php echo JText::_('TPL_KIOSK_INSCRIPTION_INTRO'); ?></p>
 			  <?php
               $usersConfig = JComponentHelper::getParams('com_users');
 			  if ($usersConfig->get('allowUserRegistration')) : ?>
