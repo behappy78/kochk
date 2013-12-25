@@ -20,18 +20,21 @@ class MediaMallFactoryBackendModelConfiguration extends JModel
 
     $items = array(
       'settings',
-      'categories',
       'types',
+      'packs',
+      '',
+      'categories',
+      'publishers',
+      'editions',
       '',
       'bonuses',
       'gateways',
       'invoices' => array('link' => FactoryRoute::view('settings&form=invoices')),
       '',
       'notifications',
-      'packs',
       'currencies',
-      '',
       'countries',
+      '',
       'groups'
     );
 

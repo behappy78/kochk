@@ -4,9 +4,9 @@
 	<fieldset name="details">
 	  <field name="id" readonly="true" class="readonly" />
 	  <field name="title" type="text" required="true" />
-	  <field name="parent_id" type="MediaMallFactoryCategory" level="0" excludecurrent="true" required="true" default="0" />
+	  <!--  field name="parent_id" type="MediaMallFactoryCategory" level="0" excludecurrent="true" required="true" default="0" /> -->
 	  <field name="description" type="textarea" rows="5" />
-	  <field name="thumbnail" type="media" />
+	  <field name="thumbnail" type="media" directory="kochk/categories"/>
 	  <field name="published" type="switch" default="1" />
 	  <field name="level" type="hidden" default="0" />
 	</fieldset>

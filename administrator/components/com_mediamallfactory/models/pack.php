@@ -131,7 +131,22 @@ class MediaMallFactoryBackendModelPack extends JModel
 
     // Get media type.
     $table = $this->getTable();
+    $types= array('Green', 'Silver', 'Gold');
+	//$path = JURI::root(true).'/images/packs/'.$types[(int)$data['type']].'_'.$data['credits'].'.png';
+	$path = JPATH_COMPONENT_SITE.DS.'assets'.DS.'images'.DS.'packs_icons'.DS.$types[(int)$data['type']].'_'.$data['credits'].'.png';
 
+	if (!file_exists($path))
+	{
+		$text = $data['credits'];
+		
+		$im     = imagecreatefrompng(JPATH_COMPONENT_SITE.DS.'assets'.DS.'images'.DS.'packs_icons'.DS.strtolower($types[(int)$data['type']]).".png");
+		imagesavealpha($im, true);
+		$color = imagecolorallocate($im, 51, 51, 51);
+		$font = JPATH_COMPONENT_SITE.DS.'assets'.DS.'fonts/georgiaz.ttf';
+		imagettftext($im, 48, 0, 183, 73, $color, $font, $text);
+		imagepng($im, $path);
+		imagedestroy($im);		
+	}
     // Save the media type.
     if (!$table->save($data)) {
       $this->setError($table->getError());
