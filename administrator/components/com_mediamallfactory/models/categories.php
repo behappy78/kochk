@@ -14,12 +14,11 @@ defined('_JEXEC') or die;
 
 class MediaMallFactoryBackendModelCategories extends FactoryModelAdminList
 {
-  protected $filters      = array('search', 'parent','published');
+  protected $filters      = array('search', 'published');
   protected $default_sort = array('id', 'asc');
 
   protected function getQuery()
   {
-    $level   = 0;
     $query = parent::getQuery();
     $query->select('c.*, c2.title as c2title, cni.fr as icountryn, cne.fr as ecountryn, gni.countries as incountries, gne.countries as excountries')
       ->from('#__mediamallfactory_category AS c')
@@ -28,7 +27,7 @@ class MediaMallFactoryBackendModelCategories extends FactoryModelAdminList
       ->join('INNER','#__mediamallfactory_groups AS gni ON c.icountrygroup=gni.id')
       ->join('INNER','#__mediamallfactory_groups AS gne ON c.ecountrygroup=gne.id')
       ->join('LEFT','#__mediamallfactory_category AS c2 ON c2.id=c.parent_id')
-      ->where('c.level='.$level);
+      ->where('c.level=0');
       return $query;
   }
   public function getFilterParent()
