@@ -31,13 +31,33 @@ defined('_JEXEC') or die; ?>
     <?php echo $this->item->icountryn; ?>
   </td>
   <td>
-    <?php echo $this->item->incountries; ?>
+    <?php 
+    if (strlen($this->item->incountries) > 140)
+    {
+    	$ctrs = '';
+    	for ($i = 0; $i < strlen($this->item->incountries) % 120; $i++) {
+    		$ctrs .= substr($this->item->incountries, $i * 140, 140).PHP_EOL;
+    	}
+    	echo $ctrs;
+    }
+    else
+    	echo $this->item->incountries; ?>  
   </td>
   <td>
     <?php echo $this->item->ecountryn; ?>
   </td>  
   <td>
-    <?php echo $this->item->excountries; ?>
+    <?php 
+    if (strlen($this->item->excountries) > 140)
+    {
+    	$ctrs = '';
+    	for ($i = 0; $i < strlen($this->item->excountries) % 120; $i++) {
+    		$ctrs .= substr($this->item->excountries, $i * 140, 140).PHP_EOL;
+    	}
+    	echo $ctrs;
+    }
+    else
+    	echo $this->item->excountries; ?>   
   </td>  
 
   <td class="center">
