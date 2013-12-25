@@ -32,11 +32,10 @@ class MediaMallFactoryBackendControllerCategory extends JController
     $option  = FactoryApplication::getInstance()->getOption();
     $context = $option.'.edit.category.data';
     $id      = JFactory::getApplication()->input->get->getInt('id', 0);
-    $level   = JFactory::getApplication()->input->get->getInt('level', 0);
 
     $app->setUserState($context, null);
     $data['id'] = $id;
-    $data['level'] = $level;
+    $data['level'] = 0;
     if ($model->save($data)) {
       $msg = FactoryText::_('category_save_success');
     } else {
