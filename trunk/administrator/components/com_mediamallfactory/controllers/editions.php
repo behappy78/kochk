@@ -12,7 +12,7 @@ com_mediamallfactory - Media Mall Factory 3.3.5
 
 defined('_JEXEC') or die;
 
-class MediaMallFactoryBackendControllerPublishers extends JController
+class MediaMallFactoryBackendControllerEditions extends JController
 {
   public function __construct($config = array())
   {
@@ -25,7 +25,7 @@ class MediaMallFactoryBackendControllerPublishers extends JController
   {
     $app   = JFactory::getApplication();
     $batch = $app->input->post->get('cid', array(), 'array');
-    $model = $this->getModel('Publisher');
+    $model = $this->getModel('Edition');
     $task  = $this->getTask();
     $value = intval('publish' == $task);
 
@@ -39,7 +39,7 @@ class MediaMallFactoryBackendControllerPublishers extends JController
       }
     }
 
-    $this->setRedirect(FactoryRoute::view('publishers'), $msg);
+    $this->setRedirect(FactoryRoute::view('editions'), $msg);
   }
   /*
   public function add()
@@ -53,7 +53,7 @@ class MediaMallFactoryBackendControllerPublishers extends JController
   {
     $app   = JFactory::getApplication();
     $batch = $app->input->post->get('cid', array(), 'array');
-    $model = $this->getModel('Publisher');
+    $model = $this->getModel('Edition');
 
     if ($model->delete($batch)) {
       $msg = FactoryText::plural('list_delete_success', count($batch));
@@ -65,6 +65,6 @@ class MediaMallFactoryBackendControllerPublishers extends JController
       }
     }
 
-    $this->setRedirect(FactoryRoute::view('publishers'), $msg);
+    $this->setRedirect(FactoryRoute::view('editions'), $msg);
   }
 }
