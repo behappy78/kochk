@@ -25,9 +25,9 @@ class MediaMallFactoryBackendController extends JController
     if ('categories' == $view) {
       //JFactory::getApplication()->redirect(JRoute::_('index.php?option=com_categories&extension=com_mediamallfactory', false));
     }
-    if ('publishers' == $view) {
+ /*   if ('publishers' == $view) {
       JFactory::getApplication()->redirect(JRoute::_('index.php?option=com_mediamallfactory&view=categories&level=1', false));
-    }
+    }*/
     JLoader::register('MediaMallFactoryHelper', FactoryApplication::getInstance()->getPath('component_administrator').DS.'helpers'.DS.'mediamallfactory.php');
 
     MediaMallFactoryHelper::addSubmenu($view);
