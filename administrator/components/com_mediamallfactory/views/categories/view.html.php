@@ -19,11 +19,5 @@ class MediaMallFactoryBackendViewCategories extends FactoryView
     $get = array('state', 'items', 'pagination', 'filters'),
     $tpl = '/list'
   ;
-  function __construct($config)
-  {
-    $level   = JFactory::getApplication()->input->get->getInt('level', 0);
-    $cats = array('category', 'publishers');
-    $this->buttons = array('add'=>$cats[$level], 'edit'=>$cats[$level], '', 'delete', 'publish', 'unpublish');
-    parent::__construct($config);
-  }
+
 }
