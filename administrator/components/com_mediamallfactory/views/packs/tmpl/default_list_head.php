@@ -16,7 +16,9 @@ defined('_JEXEC') or die; ?>
   <th width="1%">
 	  <input type="checkbox" name="checkall-toggle" value="" onclick="checkAll(this)" />
 	</th>
-
+	<th width="2%">
+    <?php echo JHtml::_('FactoryAdmin.sort', 'categories_list_thumb', 'thumbnail', $this->state); ?>
+	</th>
 	<th>
     <?php echo JHtml::_('FactoryAdmin.sort', 'packs_list_title', 'title', $this->state); ?>
 	</th>

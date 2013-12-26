@@ -32,7 +32,17 @@ defined('_JEXEC') or die; ?>
     <?php echo $this->item->country; ?>
   </td> 
   <td>
-    <?php echo $this->item->countries; ?>
+    <?php 
+    if (strlen($this->item->countries) > 140)
+    {
+    	$ctrs = '';
+    	for ($i = 0; $i < strlen($this->item->countries) % 120; $i++) {
+    		$ctrs .= substr($this->item->countries, $i * 140, 140).PHP_EOL;
+    	}
+    	echo $ctrs;
+    }
+    else
+    	echo $this->item->countries; ?>
   </td>  
 
   <td class="center">
