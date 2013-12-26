@@ -21,7 +21,7 @@ $data3 = $session->get('data_3');
                                       $query->join('inner', '#__countries as curr on curr.id = packs.currency');
                                       $query->join('inner', '#__mediamallfactory_groups as gr on gr.id = packs.country_group');
                                       $query->where('packs.published = 1 AND (country = '.$db->quote($data3['country']).' OR LOCATE('.$db->quote($data3['country']).',gr.countries))');  
-                                      $query->order('id');
+                                      $query->order('credits');
                                       //print_r($query);
                                       $db->setQuery($query);
                                       if ($db->getErrorNum()) {
@@ -31,10 +31,11 @@ $data3 = $session->get('data_3');
                                       
                                       //echo $country;
                                       $cnt = 0;
+                                      $types= array('Green', 'Silver', 'Gold');
                                       if ($results) {
-                                          foreach ($results as $result) {											
-											//$packicon = Jh::_('components/com_mediamallfactory/assets/images/packs_images/'.$cnt.'.php');
-											$packicon = JRoute::_('components/com_mediamallfactory/assets/images/packs_icons/'.$cnt.'.php');
+                                          foreach ($results as $result) {	
+											$packicon = JRoute::_('components/com_mediamallfactory/assets/images/packs_icons/'.DS.$types[$result->type].'_'.$result->credits . '.png');	
+											//$packicon = JRoute::_('components/com_mediamallfactory/assets/images/packs_icons/'.$cnt.'.png');
 											echo '<span class="span3">';
 											echo '<img src="'.$packicon.'"></br>';
 											//echo '<img src="'.JPATH_ROOT.'components/com_mediamallfactory/assets/images/packs_images/'.$cnt.'.php">';

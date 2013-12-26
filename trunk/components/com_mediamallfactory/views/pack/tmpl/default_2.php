@@ -19,12 +19,12 @@ $session =& JFactory::getSession();
 $step = $session->get('step'); 
 $maxSteps = (int)$session->get('maxSteps_');
   ?>
-  <div class="title-bar"> <strong><?php echo FactoryText::_('registration_steps_2_title');?></strong> </div>
+  <div class="title-bar"> <strong>Etape 2: Code de validation</strong> </div>
     <div class="side-holder frombox center">
-                	<p><?php echo FactoryText::_('to_do_next_registration_steps_1');?> <em><?php echo FactoryText::_('registration_validation_code');?></em> <?php echo FactoryText::_('to_do_next_registration_steps_2');?></p>
+                	<p>Pour poursuivre les étapes d'enregistrement, veuillez saisir le <em>Code de validation</em> que vous avez reçu par e-mail</p>
                     
                               <div class="control-group">
-                                <label class="control-label" for="verifVcode"><?php echo FactoryText::_('registration_validation_code');?></label>
+                                <label class="control-label" for="verifVcode">Code de Validation</label>
                                 <div class="controls">
                                   <input type="text" id="verifVcode" name="verifVcode" class="center required validate-alphanum mailCode">
                                 </div>

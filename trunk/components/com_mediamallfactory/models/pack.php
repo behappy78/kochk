@@ -14,9 +14,9 @@ defined('_JEXEC') or die;
 
 jimport('joomla.application.component.model');
 
-class MediaMallFactoryFrontendModelRegistration extends JModel
+class MediaMallFactoryFrontendModelPack extends JModel
 {
-  protected $form_name = 'registration';
+  protected $form_name = 'pack';
   public function __construct($config){
     $session = JFactory::getSession();
     $db =& JFactory::getDBO();
@@ -34,18 +34,18 @@ class MediaMallFactoryFrontendModelRegistration extends JModel
         $db->setQuery($query);
         $results = $db->loadObjectList();
         if (!$results) {
-            $url=JRoute::_(JURI::base()."index.php?option=com_mediamallfactory&view=pack");
+            $session->set('step', 4);
         }                  
         else 
         {
             if ($results[0]->profiled == 1)
             {
-                $session->set('step', 4);
+                $session->set('step', 3);
             }
             else 
             {
                 // TODO: have to save to original link and redirect to it here
-                $session->set('step', 3);
+                $session->set('step', 4);
             }
             //$app->redirect($url, "U R Already a member");
         }
@@ -101,7 +101,7 @@ class MediaMallFactoryFrontendModelRegistration extends JModel
                     else 
                         $verif = true;
 
-                    $session->set('step', 3);
+                    $session->set('step',4);
                     $session->set('stepD', $session->get('step'));
                 }
                 else 
